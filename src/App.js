@@ -10,14 +10,20 @@ import "./App.scss";
 import LogInModal from "./components/LogInModal/LogInModal";
 
 const App = () => {
-  const data = useData()
+  const [data, setData] = useState([]);
+  const [searchValue, setSearchValue] = useState ("");
 
+  useEffect(() => {
+    fetch("http://localhost:3333/api/candidates")
+      .then((res) => res.json())
+      .then((res) => setData(res));
+  }, []);
+console.log(searchValue);
   return (
     <>
-      <DataContext.Provider value={data}>
+      <DataContext.Provider value={{data, setSearchValue}}>
         <BrowserRouter>
           <Header />
-
           <Routes>
             <Route exact path="/" element={<LandingPage />}></Route>
             <Route exact path="/candidate" element={<CandidatePage />}></Route>
