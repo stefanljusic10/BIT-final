@@ -5,12 +5,12 @@ import "./landingPage.scss";
 
 const LandingPage = () => {
   const data = useContext(DataContext);
-  console.log(data);
+
   return (
     <>
       <div className="candidate-card-container">
         {data.candidates.map((e) => {
-          return <CandidateCard candidate={e} />;
+          return <CandidateCard key={e.id} candidate={e} />;
         })}
       </div>
     </>

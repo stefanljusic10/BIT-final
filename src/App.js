@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./components/Header/Header";
 import DataContext from "./utils/context";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
+import LogInModal from "./components/LogInModal/LogInModal";
 import useData from "./utils/useData";
 import "./App.scss";
-import LogInModal from "./components/LogInModal/LogInModal";
 
 const App = () => {
   const data = useData()
