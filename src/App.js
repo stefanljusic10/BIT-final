@@ -23,8 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Header />}></Route>
             <Route path="/landing-page" element={<LandingPage />}></Route>
-
-            <Route path="candidate" element={<CandidatePage />}></Route>
+            <Route path="/candidate" element={<CandidatePage />}></Route>
           </Routes>
         </BrowserRouter>
       </DataContext.Provider>
