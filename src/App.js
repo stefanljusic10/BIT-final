@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './App.scss'
 
 const App = () => {
   const [data, setData] = useState([])
