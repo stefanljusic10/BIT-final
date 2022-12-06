@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Header from './components/Header/Header'
-import DataContext from './utils.js/context'
+import Header from "./components/Header/Header";
+import DataContext from "./utils.js/context";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import "./App.scss";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -17,15 +18,17 @@ const App = () => {
   }, []);
 
   return (
-    <DataContext.Provider value={data}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="candidate" element={<CandidatePage />}></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </DataContext.Provider>
+    <>
+      <DataContext.Provider value={data}>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="candidate" element={<CandidatePage />}></Route>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </DataContext.Provider>
+    </>
   );
 };
 
