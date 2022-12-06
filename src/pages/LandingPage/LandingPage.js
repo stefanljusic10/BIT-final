@@ -14,8 +14,8 @@ const LandingPage = () => {
       <Search />
       </div>
       <div className="candidate-card-container">
-        {data.map((e) => {
-          return <CandidateCard candidate={e} />;
+        {data.map((e, i) => {
+          return <CandidateCard key={i} candidate={e} />;
         })}
       </div>
     </>
