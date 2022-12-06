@@ -3,18 +3,21 @@
     justify-content: space-between;
     align-items: center;
     background-color: blue;
-    color: white;
     padding: 1rem 2rem;
+    
+    & a{
+        color: white;
+        text-decoration: none;
+    }
 
     & > ul{
-        list-style: none;
         
-        & > li{
+        & > a{
+            list-style: none;
             display: inline-block;
-            cursor: pointer;
         }
 
-        & > li:not(:last-child){
+        & > a:not(:last-child){
             margin-right: 2rem;
         }
     }

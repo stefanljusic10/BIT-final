@@ -1,15 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
-  const navigate = useNavigate();
   return (
     <header id="header">
-      <h1>Interviews Reports</h1>
+      <Link to='/'>
+        <h1>Interviews Reports</h1>
+      </Link>
       <ul>
-        <li onClick={() => navigate("/")}>Candidates</li>
-        <li>Log in</li>
+        <Link to='/candidate'>
+          <li>Candidates</li>
+        </Link>
+        <Link to='/login'>
+          <li>Log in</li>
+        </Link>
       </ul>
     </header>
   );

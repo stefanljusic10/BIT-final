@@ -1,0 +1,53 @@
+#loginModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    & > svg {
+      width: 3rem;
+      color: white;
+    }
+  }
+
+  & > form {
+    width: 40%;
+
+    & > .userName,
+    .password,
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      border: none;
+    }
+
+    & > .userName,
+    .password {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & > button {
+      width: 100%;
+      border: 2px solid white;
+      background-color: blue;
+      color: white;
+    }
+  }
+}
