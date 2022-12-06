@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from './components/Header/Header'
-import './App.scss'
 import DataContext from './utils.js/context'
+import './App.scss'
 
 const App = () => {
   const [data, setData] = useState([])
