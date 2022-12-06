@@ -22,8 +22,10 @@ const App = () => {
       <DataContext.Provider value={data}>
         <BrowserRouter>
           <Header />
+
           <Routes>
-            <Route path="candidate" element={<CandidatePage />}></Route>
+            <Route exact path="/" element={<LandingPage />}></Route>
+            <Route exact path="/candidate" element={<CandidatePage />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
