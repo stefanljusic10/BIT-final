@@ -10,6 +10,11 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [candidate, setCandidate] = useState({});
+
+  const chooseCandidate = function (e) {
+    setCandidate(e);
+  };
 
   useEffect(() => {
     fetch("http://localhost:3333/api/candidates")
@@ -24,8 +29,16 @@ const App = () => {
           <Header />
 
           <Routes>
-            <Route exact path="/" element={<LandingPage />}></Route>
-            <Route exact path="/candidate" element={<CandidatePage />}></Route>
+            <Route
+              exact
+              path="/"
+              element={<LandingPage chooseCandidate={chooseCandidate} />}
+            ></Route>
+            <Route
+              exact
+              path="/candidate"
+              element={<CandidatePage candidate={candidate} />}
+            ></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
