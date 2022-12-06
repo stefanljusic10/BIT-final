@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DataContext from "../../utils.js/context";
+import DataContext from "../../utils/context";
 import "./search.scss";
 
 const Search = () => {
