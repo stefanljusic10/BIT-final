@@ -5,8 +5,8 @@ import "./landingPage.scss";
 import Search from "../../components/Search/Search";
 
 const LandingPage = () => {
-  const { data, setData, searchValue } = useContext(DataContext);
-  const search = data.filter((e) =>
+  const { data, searchValue } = useContext(DataContext);
+  const search = data.candidates.filter((e) =>
     e.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
