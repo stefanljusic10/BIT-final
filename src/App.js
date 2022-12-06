@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import "./App.scss";
+import Footer from "./components/Footer/Footer"
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="candidate" element={<CandidatePage />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </DataContext.Provider>
   );
