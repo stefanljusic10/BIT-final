@@ -18,8 +18,8 @@ const App = () => {
   return (
     <DataContext.Provider value={data}>
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/" element={<Header />}></Route>
           <Route path="candidate" element={<CandidatePage />}></Route>
         </Routes>
       </BrowserRouter>
