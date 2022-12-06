@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import "./App.scss";
 import DataContext from "./utils.js/context";
 
@@ -17,12 +18,15 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Header />}></Route>
-          <Route path="candidate" element={<CandidatePage />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <DataContext value={data}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Header />}></Route>
+            <Route path="/" element={<LandingPage />}></Route>
+            <Route path="candidate" element={<CandidatePage />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </DataContext>
     </>
   );
 };
