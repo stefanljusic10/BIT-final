@@ -1,24 +1,24 @@
-#header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: blue;
-    padding: 1rem 2rem;
-    
-    & a{
-        color: white;
-        text-decoration: none;
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  padding: 1rem 2rem;
+
+  & a,
+  h1 {
+    color: white;
+    text-decoration: none;
+  }
+
+  & > ul {
+    & > a {
+      list-style: none;
+      display: inline-block;
     }
 
-    & > ul{
-        
-        & > a{
-            list-style: none;
-            display: inline-block;
-        }
-
-        & > a:not(:last-child){
-            margin-right: 2rem;
-        }
+    & > a:not(:last-child) {
+      margin-right: 2rem;
     }
+  }
 }

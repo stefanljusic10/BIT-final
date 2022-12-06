@@ -5,14 +5,13 @@ import "./header.scss";
 const Header = () => {
   return (
     <header id="header">
-      <Link to='/'>
-        <h1>Interviews Reports</h1>
-      </Link>
+      <h1>Interviews Reports</h1>
+
       <ul>
-        <Link to='/candidate'>
+        <Link to="/">
           <li>Candidates</li>
         </Link>
-        <Link to='/login'>
+        <Link to="/login">
           <li>Log in</li>
         </Link>
       </ul>

@@ -1,7 +1,7 @@
 .candidate-card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 5%;
 
   .candidate-card {
@@ -17,5 +17,14 @@
     p {
       margin: 2px;
     }
+  }
+}
+#searchWrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin: 0 0.8rem 0 2rem;
+  h2 {
+    margin: 0.4rem 0 0 0;
   }
 }
