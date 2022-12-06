@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
 const useData = () => {
-    const [candidates, setCandidates] = useState()
-    const [companies, setCompanies] = useState()
-    const [reports, setReports] = useState()
-    const [users, setUsers] = useState()
+    const [candidates, setCandidates] = useState([])
+    const [companies, setCompanies] = useState([])
+    const [reports, setReports] = useState([])
+    const [users, setUsers] = useState([])
     
     useEffect(() => {
         fetch('http://localhost:3333/api/candidates')
@@ -21,7 +21,6 @@ const useData = () => {
             .then(res => setUsers(res))
     }, [])
     
-
   return { candidates, companies, reports, users }
 }
 

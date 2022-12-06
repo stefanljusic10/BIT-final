@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./components/Header/Header";
-import DataContext from "./utils.js/context";
+import DataContext from "./utils/context";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
-import useData from "./utils.js/useData";
+import useData from "./utils/useData";
 import "./App.scss";
 
 const App = () => {
