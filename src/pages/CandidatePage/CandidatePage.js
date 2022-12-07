@@ -3,6 +3,7 @@ import moment from "moment";
 import { useParams } from "react-router-dom";
 import DataContext from "../../utils/context";
 import "./candidatePage.scss";
+import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
 
 const CandidatePage = () => {
   const { data } = useContext(DataContext);
@@ -13,10 +14,15 @@ const CandidatePage = () => {
   const { id } = useParams();
 
   const chosenCandidate = data?.candidates?.find((e) => e.id == id);
-  console.log(chosenCandidate);
-
-  // console.log(id, data, chosenCandidate);
   const email = chosenCandidate?.email.toLowerCase();
+  // console.log(chosenCandidate);
+
+  console.log(id, data, chosenCandidate);
+
+  const chosenCandidateReports = data?.reports?.filter(
+    (e) => e.candidateId == id
+  );
+  console.log(chosenCandidateReports);
 
   return (
     <>
@@ -44,6 +50,11 @@ const CandidatePage = () => {
 
       <div className="reports">
         <h2>Reports</h2>
+        <div className="report-wrapper">
+          {chosenCandidateReports.map((e) => {
+            return <CandidateReport report={e} />;
+          })}
+        </div>
       </div>
     </>
   );
