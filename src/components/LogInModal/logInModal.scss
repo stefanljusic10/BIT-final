@@ -24,15 +24,24 @@
   & > form {
     width: 40%;
 
-    & > .userName,
+    & > .error-label{
+      color: red;
+      margin-bottom: 0.5rem;
+    }
+
+    & > .close-error-label{
+      visibility: hidden;
+    }
+
+    & > .email,
     .password,
     button {
-      padding: 0.5rem 1rem;
+      height: 2rem;
       border-radius: 2rem;
       border: none;
     }
 
-    & > .userName,
+    & > .email,
     .password {
       width: 100%;
       margin-bottom: 0.5rem;
@@ -41,6 +50,10 @@
       &:focus {
         outline: none;
       }
+    }
+
+    & > .email-error, .password-error{
+      border: 2px solid red;
     }
 
     & > button {
