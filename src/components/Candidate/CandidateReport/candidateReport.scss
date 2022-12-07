@@ -1,7 +1,9 @@
+// Style for admin page
+
 .wrapper {
   padding: 0 100px;
 
-  #candidateReport {
+  .candidateReport {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -50,6 +52,50 @@
       & > svg {
         width: 1.7rem;
         padding-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Style for user page
+
+.wrapper-user {
+  padding: 10px;
+  width: 20%;
+  border: 5px solid black;
+  border-radius: 20px;
+
+  .candidateReport-user {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    position: relative;
+
+    .details {
+      display: flex;
+      justify-content: flex-start;
+
+      & > svg {
+        width: 3rem;
+      }
+    }
+
+    .status-user {
+      position: absolute;
+      bottom: 5px;
+      right: 2px;
+
+      span {
+        display: none;
+      }
+
+      .passed {
+        color: green;
+      }
+
+      .declined {
+        color: red;
       }
     }
   }

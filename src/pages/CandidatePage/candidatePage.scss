@@ -34,8 +34,13 @@
   }
 }
 
+h2 {
+  padding: 0 50px;
+}
 .reports {
-  padding: 50px;
+  padding: 50px 70px;
+  display: flex;
+  gap: 10%;
 
   h2 {
     margin-bottom: 10px;

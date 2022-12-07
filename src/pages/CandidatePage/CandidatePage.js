@@ -48,13 +48,11 @@ const CandidatePage = () => {
         </div>
       </div>
 
+      <h2>Reports</h2>
       <div className="reports">
-        <h2>Reports</h2>
-        <div className="report-wrapper">
-          {chosenCandidateReports.map((e) => {
-            return <CandidateReport report={e} />;
-          })}
-        </div>
+        {chosenCandidateReports.map((e) => {
+          return <CandidateReport report={e} />;
+        })}
       </div>
     </>
   );
