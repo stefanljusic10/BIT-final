@@ -8,6 +8,19 @@ const CandidatePage = (props) => {
         <div className="personal-info-data">
           <div>
             <p>Name:</p>
+            <p>{props.candidate.name}</p>
+          </div>
+          <div>
+            <p>Date of birth:</p>
+            <p>{props.candidate.birthday}</p>
+          </div>
+          <div>
+            <p>Email:</p>
+            <p>{props.candidate.email}</p>
+          </div>
+          <div>
+            <p>Education:</p>
+            <p>{props.candidate.education}</p>
           </div>
         </div>
       </div>

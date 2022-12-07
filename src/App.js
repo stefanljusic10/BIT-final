@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "./components/Header/Header";
-import DataContext from "./utils.js/context";
-import ReactDOM from "react-dom/client";
+import DataContext from "./utils/context";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import "./App.scss";
 import Footer from "./components/Footer/Footer";
+import useData from "./utils/useData";
+import "./App.scss";
+import LogInModal from "./components/LogInModal/LogInModal";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const data = useData();
   const [candidate, setCandidate] = useState({});
 
   const chooseCandidate = function (e) {
     setCandidate(e);
   };
-
-  useEffect(() => {
-    fetch("http://localhost:3333/api/candidates")
-      .then((res) => res.json())
-      .then((res) => setData(res));
-  }, []);
 
   return (
     <>
@@ -39,6 +35,7 @@ const App = () => {
               path="/candidate"
               element={<CandidatePage candidate={candidate} />}
             ></Route>
+            <Route exact path="/login" element={<LogInModal />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>

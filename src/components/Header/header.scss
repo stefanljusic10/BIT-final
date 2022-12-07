@@ -1,21 +1,24 @@
-#header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: blue;
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  padding: 1rem 2rem;
+
+  & a,
+  h1 {
     color: white;
-    padding: 1rem 2rem;
+    text-decoration: none;
+  }
 
-    & > ul{
-        list-style: none;
-        
-        & > li{
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        & > li:not(:last-child){
-            margin-right: 2rem;
-        }
+  & > ul {
+    & > a {
+      list-style: none;
+      display: inline-block;
     }
+
+    & > a:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
 }
