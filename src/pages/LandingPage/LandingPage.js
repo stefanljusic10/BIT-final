@@ -4,7 +4,7 @@ import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCar
 import "./landingPage.scss";
 import Search from "../../components/Search/Search";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   const { data, searchValue } = useContext(DataContext);
   const search = data.candidates.filter((e) =>
     e.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -18,7 +18,13 @@ const LandingPage = () => {
       </div>
       <div className="candidate-card-container">
         {search.map((e, i) => {
-          return <CandidateCard key={i} candidate={e} />;
+          return (
+            <CandidateCard
+              key={i}
+              candidate={e}
+              chooseCandidate={props.chooseCandidate}
+            />
+          );
         })}
       </div>
     </>

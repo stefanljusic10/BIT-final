@@ -8,7 +8,8 @@ const CandidateCard = (props) => {
       <div
         className="candidate-card"
         onClick={() => {
-          navigate("/candidate");
+          navigate(`/candidate/id=${props.candidate.id}`);
+          props.chooseCandidate(props.candidate);
         }}
       >
         <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"></img>

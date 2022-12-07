@@ -11,17 +11,30 @@ import useData from "./utils/useData";
 import "./App.scss";
 
 const App = () => {
-  const data = useData()
-  const [searchValue, setSearchValue] = useState ("");
+  const data = useData();
+  const [candidate, setCandidate] = useState({});
+
+  const chooseCandidate = function (e) {
+    setCandidate(e);
+  };
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <>
-      <DataContext.Provider value={{data, searchValue, setSearchValue}}>
+      <DataContext.Provider value={{ data, searchValue, setSearchValue }}>
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route exact path="/" element={<LandingPage />}></Route>
-            <Route exact path="/candidate" element={<CandidatePage />}></Route>
+            <Route
+              exact
+              path="/"
+              element={<LandingPage chooseCandidate={chooseCandidate} />}
+            ></Route>
+            <Route
+              exact
+              path="/candidate/id=:id"
+              element={<CandidatePage candidate={candidate} />}
+            ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>
           </Routes>
           <Footer />
