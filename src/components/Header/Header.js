@@ -2,18 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
 
-const Header = () => {
+const Header = ({isAdmin}) => {
   return (
     <header id="header">
-      <h1>Interviews Reports</h1>
+      
+      <div></div>
+      <h1>{!isAdmin? "Interviews Reports" : "Reports Administration"}</h1>
 
       <ul>
-        <Link to="/">
-          <li>Candidates</li>
+        <Link to={!isAdmin ? "/" : "/admin"}>
+          <li>{!isAdmin? "Candidates" : "Reports"}</li>
         </Link>
-        <Link to="/login">
-          <li>Log in</li>
+        <Link to={!isAdmin ? "/login" : "/createReports"}>
+          <li>{!isAdmin? "Log in" : "Create Reports"}</li>
         </Link>
+      {isAdmin && <Link to="/"><li onClick={() => sessionStorage.clear()} >Log out</li></Link>}
       </ul>
     </header>
   );

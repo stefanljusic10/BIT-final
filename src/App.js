@@ -14,17 +14,18 @@ import "./App.scss";
 const App = () => {
   const data = useData();
   const [candidate, setCandidate] = useState({});
-
+  const hasToken = sessionStorage.getItem("accessToken")
   const chooseCandidate = function (e) {
     setCandidate(e);
   };
   const [searchValue, setSearchValue] = useState("");
+  console.log(hasToken);
 
   return (
     <>
       <DataContext.Provider value={{ data, searchValue, setSearchValue }}>
         <BrowserRouter>
-          <Header />
+          <Header isAdmin={hasToken} />
           <Routes>
             <Route
               exact

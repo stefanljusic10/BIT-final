@@ -10,17 +10,6 @@ const AdminMainPage = (props) => {
     <>
       <Search />
       <div>AdminMainPage</div>
-      <div className="candidate-card-container">
-        {data.map((e, i) => {
-          return (
-            <CandidateCard
-              key={i}
-              candidate={e}
-                chooseCandidate={props.chooseCandidate}
-            />
-          );
-        })}
-      </div>
     </>
   );
 };
