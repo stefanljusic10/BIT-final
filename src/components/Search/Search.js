@@ -3,10 +3,10 @@ import DataContext from "../../utils/context";
 import "./search.scss";
 
 const Search = () => {
-    const { setSearchValue } = useContext(DataContext)
+    const { setSearchValue, searchValue } = useContext(DataContext)
   return (
     <>
-        <input type="text" id="search" placeholder="Search..." onChange={(e) => setSearchValue(e.target.value)} />
+        <input type="text" id="search" placeholder="Search..." onChange={(e) => setSearchValue(e.target.value)} value={searchValue} /> 
     </>
   );
 };
