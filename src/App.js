@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import LogInModal from "./components/LogInModal/LogInModal";
 import AdminMainPage from "./pages/AdminMainPage/AdminMainPage";
 import useData from "./utils/useData";
+import AdminWizzardPage from "./pages/AdminWizzardPage/AdminWizzardPage"
 
 import "./App.scss";
 
@@ -39,6 +40,7 @@ const App = () => {
             ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>
             <Route exact path="/admin" element={isLogged ? <AdminMainPage /> : <LogInModal />}></Route>
+            <Route exact path="/createReports" element={isLogged ? <AdminWizzardPage /> : <LogInModal />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
