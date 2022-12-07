@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
+import DataContext from "../../utils/context";
 import "./logInModal.scss";
 
 const LogInModal = () => {
   const [logData, setLogData] = useState({ email: "", password: "" });
   const [isValidLogData, setIsValidLogData] = useState(true);
+  const { setIsLogged } = useContext(DataContext)
   const navigate = useNavigate();
-  console.log(isValidLogData);
-  // console.log(data.users);
 
   const validateLogUserData = (e, emailInput, passwordInput) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ const LogInModal = () => {
       .then((res) => {
         if (res.accessToken) {
           setIsValidLogData(true)
+          setIsLogged(true)
           sessionStorage.setItem("accessToken", res.accessToken);
           navigate("/admin");
         }

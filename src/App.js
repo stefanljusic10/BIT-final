@@ -14,6 +14,7 @@ import "./App.scss";
 const App = () => {
   const data = useData();
   const [candidate, setCandidate] = useState({});
+  const [isLogged, setIsLogged] = useState(sessionStorage.getItem('accessToken'))
 
   const chooseCandidate = function (e) {
     setCandidate(e);
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <DataContext.Provider value={{ data, searchValue, setSearchValue }}>
+      <DataContext.Provider value={{ data, searchValue, setSearchValue, isLogged, setIsLogged }}>
         <BrowserRouter>
           <Header />
           <Routes>
