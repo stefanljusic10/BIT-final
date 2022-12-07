@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import DataContext from "./utils/context";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
-import useData from "./utils/useData";
-import "./App.scss";
 import LogInModal from "./components/LogInModal/LogInModal";
+import useData from "./utils/useData";
+
+import "./App.scss";
 
 const App = () => {
   const data = useData();
@@ -17,13 +17,13 @@ const App = () => {
   const chooseCandidate = function (e) {
     setCandidate(e);
   };
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <>
-      <DataContext.Provider value={data}>
+      <DataContext.Provider value={{ data, searchValue, setSearchValue }}>
         <BrowserRouter>
           <Header />
-
           <Routes>
             <Route
               exact
@@ -32,7 +32,7 @@ const App = () => {
             ></Route>
             <Route
               exact
-              path="/candidate"
+              path="/candidate/id=:id"
               element={<CandidatePage candidate={candidate} />}
             ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>

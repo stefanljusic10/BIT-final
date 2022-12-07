@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import DataContext from "../../utils/context";
 import "./logInModal.scss";
 
 const LogInModal = () => {
+  const data = useContext(DataContext)
+  console.log(data.users);
+
+  const validateLoggedUser = (email, password) => {
+    
+  }
+
   return ReactDOM.createPortal(
     <div id="loginModal">
       <Link to="/">

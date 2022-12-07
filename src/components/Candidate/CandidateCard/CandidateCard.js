@@ -8,7 +8,7 @@ const CandidateCard = (props) => {
       <div
         className="candidate-card"
         onClick={() => {
-          navigate(`/candidate`);
+          navigate(`/candidate/id=${props.candidate.id}`);
           props.chooseCandidate(props.candidate);
         }}
       >
