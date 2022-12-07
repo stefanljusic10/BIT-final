@@ -6,6 +6,7 @@ import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
 import LogInModal from "./components/LogInModal/LogInModal";
+import AdminMainPage from "./pages/AdminMainPage/AdminMainPage";
 import useData from "./utils/useData";
 
 import "./App.scss";
@@ -36,6 +37,7 @@ const App = () => {
               element={<CandidatePage candidate={candidate} />}
             ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>
+            <Route exact path="/admin" element={<AdminMainPage />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
