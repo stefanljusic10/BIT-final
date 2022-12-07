@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
+import DataContext from "../../utils/context";
 
-const Header = ({isAdmin}) => {
+const Header = () => {
+  const { isLogIn, setLogIn } = useContext(DataContext);
   return (
     <header id="header">
       
       <div></div>
-      <h1>{!isAdmin? "Interviews Reports" : "Reports Administration"}</h1>
+      <h1>{isLogIn? "Interviews Reports" : "Reports Administration"}</h1>
 
       <ul>
-        <Link to={!isAdmin ? "/" : "/admin"}>
-          <li>{!isAdmin? "Candidates" : "Reports"}</li>
+        <Link to={isLogIn ? "/" : "/admin"}>
+          <li>{isLogIn? "Candidates" : "Reports"}</li>
         </Link>
-        <Link to={!isAdmin ? "/login" : "/createReports"}>
-          <li>{!isAdmin? "Log in" : "Create Reports"}</li>
+        <Link to={isLogIn ? "/login" : "/createReports"}>
+          <li>{isLogIn? "Log in" : "Create Reports"}</li>
         </Link>
-      {isAdmin && <Link to="/"><li onClick={() => sessionStorage.clear()} >Log out</li></Link>}
+      {!isLogIn && <Link to="/"><li onClick={()=>setLogIn()} >Log out</li></Link>}
       </ul>
     </header>
   );
