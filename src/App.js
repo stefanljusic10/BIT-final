@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import DataContext from "./utils/context";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
@@ -38,7 +38,7 @@ const App = () => {
               element={<CandidatePage candidate={candidate} />}
             ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>
-            <Route exact path="/admin" element={<AdminMainPage />}></Route>
+            <Route exact path="/admin" element={isLogged ? <AdminMainPage /> : <LogInModal />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
