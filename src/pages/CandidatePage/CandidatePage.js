@@ -1,33 +1,22 @@
-import React, { useContext, useEffect } from "react";
-import moment from "moment";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import DataContext from "../../utils/context";
-import "./candidatePage.scss";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
+import moment from "moment";
+import "./candidatePage.scss";
 
 const CandidatePage = () => {
   const { data } = useContext(DataContext);
-
-  // useEffect(() => {
-  //   ({ data } = useContext(DataContext));
-  // }, []);
   const { id } = useParams();
 
-  const chosenCandidate = data?.candidates?.find((e) => e.id == id);
+  const chosenCandidate = data.candidates.find(e => e.id == id)
+  const chosenCandidateReports = data?.reports.filter((e) => e.candidateId === id);
   const email = chosenCandidate?.email.toLowerCase();
-  // console.log(chosenCandidate);
-
-  console.log(id, data, chosenCandidate);
-
-  const chosenCandidateReports = data?.reports?.filter(
-    (e) => e.candidateId == id
-  );
-  console.log(chosenCandidateReports);
 
   return (
     <>
       <div className="personal-info">
-        <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"></img>
+        <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg" alt={chosenCandidate?.name} />
         <div className="personal-info-data">
           <div>
             <p>Name:</p>

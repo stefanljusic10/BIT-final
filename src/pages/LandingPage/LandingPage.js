@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 import DataContext from "../../utils/context";
 import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCard";
-import "./landingPage.scss";
 import Search from "../../components/Search/Search";
+import "./landingPage.scss";
 
-const LandingPage = (props) => {
+const LandingPage = () => {
   const { data, searchValue } = useContext(DataContext);
-  const search = data.candidates.filter((e) =>
-    e.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const search = data.candidates.filter((e) => { return e.name.toLowerCase().includes(searchValue.toLowerCase()) });
+  const renderCandidateCards = search.map((e) => <CandidateCard key={e.id} candidate={e} />)
 
   return (
     <>
@@ -17,15 +16,7 @@ const LandingPage = (props) => {
         <Search />
       </div>
       <div className="candidate-card-container">
-        {search.map((e, i) => {
-          return (
-            <CandidateCard
-              key={i}
-              candidate={e}
-              chooseCandidate={props.chooseCandidate}
-            />
-          );
-        })}
+        {renderCandidateCards}
       </div>
     </>
   );
