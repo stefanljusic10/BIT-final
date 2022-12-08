@@ -40,7 +40,7 @@ const App = () => {
             ></Route>
             <Route exact path="/login" element={<LogInModal />}></Route>
             <Route exact path="/admin" element={isLogged ? <AdminMainPage /> : <LogInModal />}></Route>
-            <Route exact path="/createReports" element={isLogged ? <AdminWizzardPage /> : <LogInModal />}></Route>
+            <Route exact path="/createReports" element={isLogged ? <AdminWizzardPage chooseCandidate={chooseCandidate} /> : <LogInModal />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>

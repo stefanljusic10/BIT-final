@@ -4,9 +4,9 @@
   
 
   #selectContainer {
-    width: 40%;
+    width: 30%;
     border-right: 2px solid black;
-    padding: 0px 5% 3% 12%;
+    padding: 0px 5% 3% 7%;
     margin-top: 50px;
     height: 70vh;
     div {
@@ -21,13 +21,45 @@
   }
   
   #candidateContainer {
-    width: 60%;
+    width: 70%;
     margin-top: 50px;
     height: 70vh;
+    
     div {
       padding-right: 5%;
       display: flex;
       justify-content: end;
+    }
+    #candidateCardsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        width: 40%;
+        margin: 10px;
+        border-radius: 15px;
+        background-color: rgb(226, 226, 226);
+        overflow: hidden;
+    
+        img {
+          width: 30%;
+          overflow: hidden;
+        }
+      #nameEmail {
+        border: none;
+        p {
+          margin: 2px;
+          display: inline;
+        }
+        p:nth-of-type(2){
+          color: gray;
+          font-size: 10px;
+        }
+      }
+      }
     }
   }
 }
