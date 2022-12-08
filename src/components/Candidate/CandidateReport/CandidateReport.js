@@ -1,41 +1,48 @@
 import React, { useContext, useState } from "react";
 import useData from "../../../utils/useData";
+import { Link } from "react-router-dom";
 import DataContext from "../../../utils/context";
 import moment from "moment";
 import "./candidateReport.scss";
 
-const CandidateReport = ({ report }) => {
+const CandidateReport = (props) => {
   const { isLogged, setIsLogged } = useContext(DataContext);
 
   return (
     <div className={isLogged ? "wrapper" : "wrapper-user"}>
       <div className={isLogged ? "candidateReport" : "candidateReport-user"}>
         <div className="company">
-          <h5>{report.companyName}</h5>
+          <h5>{props.report.companyName}</h5>
           <span>Company</span>
         </div>
 
         {isLogged ? (
           <div className="candidate">
-            <h5>{report.candidateName}</h5>
+            <h5>{props.report.candidateName}</h5>
             <span>Candidate</span>
           </div>
         ) : null}
 
         <div className="date">
-          <h5>{moment(report.interviewDate).format("LL")}</h5>
+          <h5>{moment(props.report.interviewDate).format("LL")}</h5>
           <span>Interview Date</span>
         </div>
 
         <div className={isLogged ? "status" : "status-user"}>
-          <h5 className={report.status === "passed" ? "passed" : "declined"}>
-            {report.status}
+          <h5
+            className={props.report.status === "passed" ? "passed" : "declined"}
+          >
+            {props.report.status}
           </h5>
           <span>Status</span>
         </div>
 
         <div className="details">
           <svg
+            onClick={() => {
+              props.clickModal(true);
+              props.setReportId(props.report.id);
+            }}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
