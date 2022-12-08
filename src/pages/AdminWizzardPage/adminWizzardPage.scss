@@ -1,0 +1,28 @@
+#selectContainer {
+  display: inline-block;
+  border-right: 2px solid black;
+  padding: 0px 50px 30px 150px;
+  margin-top: 50px;
+  height: 70vh;
+  div {
+    div {
+      display: inline-block;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 10px 15px;
+      margin: 10px;
+    }
+  }
+}
+
+#candidateContainer {
+  div {
+    display: flex;
+    justify-content: flex-end;
+  }
+  width: 600px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 50px;
+  height: 70vh;
+}

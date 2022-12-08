@@ -13,8 +13,6 @@ const Header = () => {
 
   return (
     <header id="header">
-      
-      <div></div>
       <h1>{!isLogged? "Interviews Reports" : "Reports Administration"}</h1>
 
       <ul>
