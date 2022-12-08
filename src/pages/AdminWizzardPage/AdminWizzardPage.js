@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./adminWizzardPage.scss";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
@@ -6,11 +6,11 @@ import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCar
 import { Route } from "react-router-dom";
 
 const AdminWizzardPage = (props) => {
+  const [step, setStep] = useState(1);
   const { data, searchValue } = useContext(DataContext);
   const search = data.candidates.filter((e) =>
     e.name.toLowerCase().includes(searchValue.toLowerCase())
   );
-
   return (
     <>
       <div id="adminWizzard1">
@@ -29,7 +29,6 @@ const AdminWizzardPage = (props) => {
           <div>
             <Search />
           </div>
-          {/* <Route path="/createReports" element={}></Route> */}
           <div id="candidateCardsContainer">
             {search.map((e, i) => {
               return (
@@ -41,9 +40,11 @@ const AdminWizzardPage = (props) => {
               );
             })}
           </div>
-        <div id="buttonContainer">
-            <button id="nextButton">NEXT</button>
-        </div>
+          <div id="buttonContainer">
+            <button id="nextButton" onClick={() => setStep(step + 1)}>
+              NEXT
+            </button>
+          </div>
         </div>
       </div>
     </>
