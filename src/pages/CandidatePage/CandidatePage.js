@@ -4,23 +4,24 @@ import DataContext from "../../utils/context";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
 import moment from "moment";
 import "./candidatePage.scss";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const CandidatePage = () => {
   const { data } = useContext(DataContext);
   const { id } = useParams();
 
   const chosenCandidate = data.candidates.find((e) => e.id == id);
-  const chosenCandidateReports = data?.reports?.filter(
-    (e) => e.candidateId == id
-  );
+  const chosenCandidateReports = data?.reports?.filter((e) => e.candidateId == id);
   const email = chosenCandidate?.email.toLowerCase();
-  console.log(chosenCandidateReports);
+
+  if(!chosenCandidate) 
+    return <ErrorPage />
 
   return (
     <>
       <div className="personal-info">
         <img
-          src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"
+          src={chosenCandidate?.avatar}
           alt={chosenCandidate?.name}
         />
         <div className="personal-info-data">
