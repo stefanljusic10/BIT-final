@@ -3,6 +3,7 @@ import "./adminWizzardPage.scss";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
 import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCard";
+import { Route } from "react-router-dom";
 
 const AdminWizzardPage = (props) => {
   const { data, searchValue } = useContext(DataContext);
@@ -26,8 +27,9 @@ const AdminWizzardPage = (props) => {
         </div>
         <div id="candidateContainer">
           <div>
-            <Search />{" "}
+            <Search />
           </div>
+          {/* <Route path="/createReports" element={}></Route> */}
           <div id="candidateCardsContainer">
             {search.map((e, i) => {
               return (
