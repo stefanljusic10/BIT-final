@@ -1,0 +1,19 @@
+.selectCompany {
+    .company {
+        border-right: none;
+        flex-basis: auto;
+    }
+    .candidate {
+        display: none;
+    }
+    .date{
+        display: none;
+    }
+    .status{
+        display: none;
+    }
+    svg {
+        display: none;
+    }
+
+}

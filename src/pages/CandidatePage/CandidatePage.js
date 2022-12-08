@@ -7,15 +7,10 @@ import CandidateReport from "../../components/Candidate/CandidateReport/Candidat
 
 const CandidatePage = () => {
   const { data } = useContext(DataContext);
-
-  // useEffect(() => {
-  //   ({ data } = useContext(DataContext));
-  // }, []);
   const { id } = useParams();
 
   const chosenCandidate = data?.candidates?.find((e) => e.id == id);
   const email = chosenCandidate?.email.toLowerCase();
-  // console.log(chosenCandidate);
 
   console.log(id, data, chosenCandidate);
 

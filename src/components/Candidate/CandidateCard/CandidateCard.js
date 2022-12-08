@@ -13,7 +13,7 @@ const CandidateCard = (props) => {
         }}
       >
         <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"></img>
-        <div id="nameEmail">
+        <div className="nameEmail">
         <p>{props.candidate.name}</p>
         <p>{props.candidate.email}</p>
         </div>
