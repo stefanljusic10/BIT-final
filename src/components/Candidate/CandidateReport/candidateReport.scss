@@ -75,10 +75,6 @@
     .details {
       display: flex;
       justify-content: flex-start;
-
-      & > svg {
-        width: 3rem;
-      }
     }
 
     .status-user {
@@ -99,4 +95,8 @@
       }
     }
   }
+}
+
+svg {
+  width: 3rem;
 }
