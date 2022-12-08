@@ -18,6 +18,7 @@ const AdminWizzardPage = () => {
         </div>
       </div>
       <div id="candidateContainer">
+        
         <div>
           <Search />{" "}
         </div>

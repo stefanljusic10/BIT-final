@@ -1,9 +1,12 @@
 #adminWizzard1 {
+  display: flex;
+  flex-wrap: wrap;
+  
 
   #selectContainer {
-    display: inline-block;
+    width: 40%;
     border-right: 2px solid black;
-    padding: 0px 50px 30px 150px;
+    padding: 0px 5% 3% 12%;
     margin-top: 50px;
     height: 70vh;
     div {
@@ -18,17 +21,14 @@
   }
   
   #candidateContainer {
-    
-    div {
-      display: flex;
-      justify-content: flex-end;
-    }
-    width: 55%;
-    
-    display: inline-block;
-    vertical-align: top;
+    width: 60%;
     margin-top: 50px;
     height: 70vh;
+    div {
+      padding-right: 5%;
+      display: flex;
+      justify-content: end;
+    }
   }
 }
   
