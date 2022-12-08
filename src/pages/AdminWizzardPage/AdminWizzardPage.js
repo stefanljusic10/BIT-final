@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./adminWizzardPage.scss";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
@@ -12,37 +12,37 @@ const AdminWizzardPage = (props) => {
 
   return (
     <>
-    <div id="adminWizzard1">
-      <div id="selectContainer">
-        <div>
-          <div>1</div>Select Company
+      <div id="adminWizzard1">
+        <div id="selectContainer">
+          <div>
+            <div>1</div>Select Candidate
+          </div>
+          <div>
+            <div>2</div>Select Company
+          </div>
+          <div>
+            <div>3</div>Fill Report Details
+          </div>
         </div>
-        <div>
-          <div>2</div>Select Company
+        <div id="candidateContainer">
+          <div>
+            <Search />{" "}
+          </div>
+          <div id="candidateCardsContainer">
+            {search.map((e, i) => {
+              return (
+                <CandidateCard
+                  key={i}
+                  candidate={e}
+                  chooseCandidate={props.chooseCandidate}
+                />
+              );
+            })}
+          </div>
+        <div id="buttonContainer">
+            <button id="nextButton">NEXT</button>
         </div>
-        <div>
-          <div>3</div>Fill Report Details
         </div>
-      </div>
-      <div id="candidateContainer">
-
-        <div>
-          <Search />{" "}
-        </div>
-        <div id="candidateCardsContainer">
-        
-        {search.map((e, i) => {
-          return (
-            <CandidateCard
-            key={i}
-            candidate={e}
-            chooseCandidate={props.chooseCandidate}
-            />
-            );
-          })}
-        
-      </div>
-      </div>
       </div>
     </>
   );
