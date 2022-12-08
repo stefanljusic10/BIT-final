@@ -5,6 +5,7 @@ import Search from "../../components/Search/Search";
 const AdminWizzardPage = () => {
   return (
     <>
+    <div id="adminWizzard1">
       <div id="selectContainer">
         <div>
           <div>1</div>Select Company
@@ -20,6 +21,7 @@ const AdminWizzardPage = () => {
         <div>
           <Search />{" "}
         </div>
+      </div>
       </div>
     </>
   );
