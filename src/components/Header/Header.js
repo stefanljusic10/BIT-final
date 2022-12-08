@@ -5,7 +5,6 @@ import "./header.scss";
 
 const Header = () => {
   const { isLogged, setIsLogged } = useContext(DataContext)
-  console.log(isLogged);
 
   const logOut = () => {
     sessionStorage.clear()
