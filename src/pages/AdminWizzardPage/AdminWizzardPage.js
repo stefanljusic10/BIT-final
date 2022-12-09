@@ -9,7 +9,7 @@ import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 
 const AdminWizzardPage = (props) => {
   const [step, setStep] = useState(1);
-  const [candidateSelected, setCandidateSelected] = useState({});
+  const [candidateSelected, setCandidateSelected] = useState(null);
   const { data, searchValue } = useContext(DataContext);
   const search = data.candidates.filter((e) =>
     e.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -26,7 +26,7 @@ const AdminWizzardPage = (props) => {
           <div>
             <Search />
           </div>
-          {step === 1 && <SelectCandidate setCandidateSelected={setCandidateSelected} search={search} />}
+          {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
           {step === 2 && <SelectCompany search={search} />}
           <div className="buttonContainer">
             {step !== 1 && (

@@ -8,7 +8,7 @@ const SelectCandidate = (props) => {
     <div className="candidateCardsContainer">
     {props.search.map((e, i) => {
       return (
-        <CandidateCard2  setCandidateSelected={props.setCandidateSelected} e={e}
+        <CandidateCard2 isSelected={props.candidateSelected?.id===e.id} setCandidateSelected={props.setCandidateSelected} e={e}
         key={i}
         candidate={e}
         chooseCandidate={props.chooseCandidate}

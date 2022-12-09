@@ -6,7 +6,7 @@ const CandidateCard = (props) => {
   return (
     <>
       <div
-        className="candidate-card2"
+        className={`candidate-card2 ${props.isSelected ? "candidate-card2-active" : ""}`}
         onClick={()=>{
           props.setCandidateSelected(props.e)
         }}
