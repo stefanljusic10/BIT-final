@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CandidateCard2 from '../Candidate/CandidateCard/CandidateCard2';
+import CandidateCard2 from '../Candidate/CandidateCard2/CandidateCard2';
 import "./selectCandidate.scss";
 
 const SelectCandidate = (props) => {
