@@ -3,7 +3,6 @@ import "./adminWizzardPage.scss";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
 import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCard";
-import { Route } from "react-router-dom";
 import SelectCandidate from "../../components/SelectCandidate/SelectCandidate";
 import SelectCompany from "../../components/SelectCompany/SelectCompany";
 
