@@ -15,7 +15,7 @@ const LogInModal = () => {
     fetch("http://localhost:3333/login", {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: emailInput, password: passwordInput }),
@@ -28,10 +28,10 @@ const LogInModal = () => {
           sessionStorage.setItem("accessToken", res.accessToken);
           navigate("/admin");
         }
-        else throw('Greskaaaa!')
+        else throw new Error({ message: 'Greska' })
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
         setIsValidLogData(false)
       });
   };

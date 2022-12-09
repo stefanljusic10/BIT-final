@@ -14,15 +14,11 @@ import "./App.scss";
 const App = () => {
   const data = useData();
   const [searchValue, setSearchValue] = useState("");
-  const [isLogged, setIsLogged] = useState(
-    sessionStorage.getItem("accessToken")
-  );
+  const [isLogged, setIsLogged] = useState(sessionStorage.getItem("accessToken"));
 
   return (
     <>
-      <DataContext.Provider
-        value={{ data, searchValue, setSearchValue, isLogged, setIsLogged }}
-      >
+      <DataContext.Provider value={{ data, searchValue, setSearchValue, isLogged, setIsLogged }}>
         <BrowserRouter>
           <Header />
           <Routes>
