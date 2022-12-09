@@ -1,0 +1,24 @@
+.nextButton,
+.backButton {
+  padding: 0.8rem 1.5rem;
+  background-color: rgb(84, 164, 255);
+  border: none;
+  border-radius: 0.7rem;
+  color: white;
+  font-size: medium;
+}
+
+.nextButton {
+  background-color: rgb(84, 164, 255);
+}
+.backButton {
+  background-color: palevioletred;
+}
+
+.nextButton:hover,
+.backButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 100ms;
+  box-shadow: none;
+}

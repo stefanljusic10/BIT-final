@@ -1,22 +1,14 @@
-import React, {useState} from 'react';
-import CandidateCard2 from '../Candidate/CandidateCard2/CandidateCard2';
+import React from 'react';
+import CandidateCard from './CandidateCard/CandidateCard';
 import "./selectCandidate.scss";
 
-const SelectCandidate = (props) => {
+const SelectCandidate = ({ search, setCandidateSelected }) => {
   return (
     <>
-    <div className="candidateCardsContainer">
-    {props.search.map((e, i) => {
-      return (
-        <CandidateCard2  setCandidateSelected={props.setCandidateSelected} e={e}
-        key={i}
-        candidate={e}
-        chooseCandidate={props.chooseCandidate}
-        />
-        );
-      })}
-  </div>
-        </>
+      <div className="candidateCardsContainer">
+        {search.map((e, i) => <CandidateCard setCandidateSelected={setCandidateSelected} key={i} candidate={e} />)}
+      </div>
+    </>
   )
 }
 

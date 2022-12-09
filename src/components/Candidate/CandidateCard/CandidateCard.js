@@ -1,23 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-const CandidateCard = (props) => {
+const CandidateCard = ({ candidate }) => {
   const navigate = useNavigate();
+
   return (
     <>
       <div
         className="candidate-card"
-        onClick={() => {
-          navigate(`/candidate/id=${props.candidate.id}`);
-          props.chooseCandidate(props.candidate);
-        }}
+        onClick={() => navigate(`/candidate/id=${candidate.id}`)}
       >
-        <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"></img>
-        <div className="nameEmail">
-        <p>{props.candidate.name}</p>
-        <p>{props.candidate.email}</p>
-        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg" alt={candidate.name} />
+        <p>{candidate.name}</p>
+        <p>{candidate.email}</p>
       </div>
     </>
   );

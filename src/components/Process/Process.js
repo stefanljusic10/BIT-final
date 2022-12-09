@@ -16,13 +16,13 @@ const NAV = [
     },
   ];
 
-const Process = (props) => {
+const Process = ({ step }) => {
   return (
     <>
     <div className="processContainer">
     {NAV.map((navItem, i) => {
         return (
-            <div key={i}className={props.step === navItem.number? "activeItem" : ""}>
+          <div key={i} className={step === navItem.number? "item activeItem" : "item"}>
             <div key={i}>{navItem.number}</div>
             {navItem.label}
           </div>

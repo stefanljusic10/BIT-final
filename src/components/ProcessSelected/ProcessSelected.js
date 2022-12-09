@@ -1,11 +1,11 @@
 import React from 'react'
 import "./processSelected.scss"
 
-const ProcessSelected = () => {
+const ProcessSelected = ({ candidateSelected }) => {
   return (
-    <>
-    <div className="processSelected">ProcessSelected</div>
-    </>
+    <div className="processSelected">
+      {candidateSelected.name}
+    </div>
   )
 }
 

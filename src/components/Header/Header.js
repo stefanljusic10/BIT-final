@@ -4,7 +4,8 @@ import DataContext from "../../utils/context";
 import "./header.scss";
 
 const Header = () => {
-  const { isLogged, setIsLogged } = useContext(DataContext);
+  const { isLogged, setIsLogged } = useContext(DataContext)
+
   const logOut = () => {
     sessionStorage.clear();
     setIsLogged(false);

@@ -1,19 +1,10 @@
 .selectCompany {
-    .company {
-        border-right: none;
-        flex-basis: auto;
-    }
-    .candidate {
-        display: none;
-    }
-    .date{
-        display: none;
-    }
-    .status{
-        display: none;
-    }
-    svg {
-        display: none;
-    }
+    border-bottom: 1px solid black;
+    padding: .5rem;
+    font-size: 1.2rem;
 
+    &:hover{
+        background-color: rgb(231, 231, 231);
+        cursor: pointer;
+    }
 }
