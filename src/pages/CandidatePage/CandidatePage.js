@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import DataContext from "../../utils/context";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
 import CandidateModal from "../../components/Candidate/CandidateModal/CandidateModal";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import moment from "moment";
 import "./candidatePage.scss";
 
@@ -11,14 +12,12 @@ const CandidatePage = () => {
   const { id } = useParams();
   const [isReportClicked, setIsReportClicked] = useState(false);
   const [reportId, setReportId] = useState();
-  console.log(isReportClicked);
 
   const chosenCandidate = data.candidates.find((e) => e.id == id);
-  const chosenCandidateReports = data?.reports.filter(
-    (e) => e.candidateId == id
-  );
+  const chosenCandidateReports = data?.reports.filter((e) => e.candidateId == id);
   const email = chosenCandidate?.email.toLowerCase();
-  console.log(chosenCandidateReports);
+
+  if(!chosenCandidate) return <ErrorPage />
 
   return (
     <>

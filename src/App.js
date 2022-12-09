@@ -10,11 +10,14 @@ import AdminMainPage from "./pages/AdminMainPage/AdminMainPage";
 import AdminWizzardPage from "./pages/AdminWizzardPage/AdminWizzardPage";
 import useData from "./utils/useData";
 import "./App.scss";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 const App = () => {
   const data = useData();
   const [searchValue, setSearchValue] = useState("");
-  const [isLogged, setIsLogged] = useState(sessionStorage.getItem("accessToken"));
+  const [isLogged, setIsLogged] = useState(
+    sessionStorage.getItem("accessToken")
+  );
 
   return (
     <>
@@ -24,25 +27,14 @@ const App = () => {
         <BrowserRouter>
           <Header />
           <main className="main-box">
-          <Routes>
-            <Route exact path="/" element={<LandingPage />}></Route>
-            <Route
-              exact
-              path="/candidate/id=:id"
-              element={<CandidatePage />}
-            ></Route>
-            <Route exact path="/login" element={<LogInModal />}></Route>
-            <Route
-              exact
-              path="/admin"
-              element={isLogged ? <AdminMainPage /> : <LogInModal />}
-            ></Route>
-            <Route
-              exact
-              path="/createReports"
-              element={isLogged ? <AdminWizzardPage /> : <LogInModal />}
-            ></Route>
-          </Routes>
+            <Routes>
+              <Route exact path="/" element={<LandingPage />}></Route>
+              <Route exact path="/candidate/id=:id" element={<CandidatePage />}></Route>
+              <Route exact path="/login" element={<LogInModal />}></Route>
+              <Route exact path="/admin" element={isLogged ? <AdminMainPage /> : <LogInModal />}></Route>
+              <Route exact path="/createReports" element={isLogged ? <AdminWizzardPage /> : <LogInModal />}></Route>
+              <Route path="*" element={<ErrorPage />}></Route>
+            </Routes>
           </main>
           <Footer />
         </BrowserRouter>
