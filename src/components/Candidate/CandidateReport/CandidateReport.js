@@ -9,8 +9,8 @@ const CandidateReport = ({ report }) => {
   const statusClass = (report.status === "passed") ? "status passed" : "status declined"
 
   return (
-    <div className="wrapper">
-      <div className="candidateReport">
+    <div className="candidateReport">
+      <div className="box">
         <Item itemClass={'company'} name={report.companyName} placeholder={'Company'} />
         <Item itemClass={'candidate'} name={report.candidateName} placeholder={'Candidate'} />
         <Item itemClass={'date'} name={interviewDate} placeholder={'Interview Date'} />

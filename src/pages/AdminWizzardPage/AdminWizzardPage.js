@@ -6,8 +6,8 @@ import SelectCompany from "../../components/SelectCompany/SelectCompany";
 import Process from "../../components/Process/Process";
 import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 import Button from "../../components/Button/Button";
-import "./adminWizzardPage.scss";
 import FillReportDetail from "../../components/FillReportDetail/FillReportDetail";
+import "./adminWizzardPage.scss";
 
 const AdminWizzardPage = () => {
   const { data, searchValue } = useContext(DataContext);

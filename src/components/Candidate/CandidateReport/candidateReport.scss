@@ -1,13 +1,16 @@
 // Style for admin page
-.wrapper {
-  padding: 0 50px;
+.candidateReport {
+  padding: 0 10rem;
 
-  .candidateReport {
+  &:not(:first-child){
+    margin-top: 1.5rem;
+  }
+
+  .box {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 1.5rem;
     padding: 1rem 0;
     -webkit-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
