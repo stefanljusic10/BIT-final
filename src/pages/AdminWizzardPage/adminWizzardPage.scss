@@ -19,21 +19,22 @@
       }
     }
   }
-  
+
   .activeItem {
-     color: black;
-     & > div {
-       background-color: rgb(84, 164, 255);
-       color: white;
-       border-color:red;
-     } 
-  } 
+    color: black;
+    & > div {
+      background-color: rgb(84, 164, 255);
+      color: white;
+      border-color: red;
+    }
+  }
   .candidateContainer {
     width: 70%;
     margin-top: 50px;
     height: 70vh;
 
-    .nextButton, .backButton {
+    .nextButton,
+    .backButton {
       padding: 15px 25px;
       margin-top: 50px;
       margin-right: 9%;
@@ -43,14 +44,15 @@
       color: white;
       font-size: medium;
     }
-    .backButton{
+    .backButton {
       background-color: palevioletred;
     }
-    .nextButton:hover, .backButton:hover{
+    .nextButton:hover,
+    .backButton:hover {
       cursor: pointer;
       transform: scale(1.05);
       transition: 100ms;
-      box-shadow: 9px 14px 20px -22px rgba(0,0,0,0.75);
+      box-shadow: 9px 14px 20px -22px rgba(0, 0, 0, 0.75);
     }
 
     & > div {
@@ -62,35 +64,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      
-      & > div {
-        display: flex;
-        width: 40%;
-        margin: 10px;
-        border-radius: 15px;
-        background-color: rgb(226, 226, 226);
-        overflow: hidden;
-        box-shadow: 9px 14px 20px -22px rgba(0,0,0,0.75);
 
-        img {
-          width: 30%;
-          overflow: hidden;
-        }
-
-        .nameEmail {
-          padding: 5px;
-          margin-top: 10px;
-          border: none;
-          border-radius: 0;
-          p {
-            margin: 2px;
-          }
-          p:nth-of-type(2) {
-            color: gray;
-            font-size: 10px;
-          }
-        }
-      }
       .candidate-card:hover {
         cursor: pointer;
         transform: scale(1.05);

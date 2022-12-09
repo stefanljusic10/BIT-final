@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import CandidateCard from '../Candidate/CandidateCard/CandidateCard';
+import "./selectCandidate.scss";
 
 const SelectCandidate = (props) => {
   return (
