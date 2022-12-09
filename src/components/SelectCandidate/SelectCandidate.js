@@ -1,5 +1,5 @@
-import React from 'react';
-import CandidateCard from '../Candidate/CandidateCard/CandidateCard';
+import React, {useState} from 'react';
+import CandidateCard2 from '../Candidate/CandidateCard/CandidateCard2';
 import "./selectCandidate.scss";
 
 const SelectCandidate = (props) => {
@@ -7,14 +7,14 @@ const SelectCandidate = (props) => {
     <>
     <div className="candidateCardsContainer">
     {props.search.map((e, i) => {
-        return (
-            <CandidateCard
-            key={i}
-            candidate={e}
-            chooseCandidate={props.chooseCandidate}
-            />
-            );
-        })}
+      return (
+        <CandidateCard2  setCandidateSelected={props.setCandidateSelected} e={e}
+        key={i}
+        candidate={e}
+        chooseCandidate={props.chooseCandidate}
+        />
+        );
+      })}
   </div>
         </>
   )

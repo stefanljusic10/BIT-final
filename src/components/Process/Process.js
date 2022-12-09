@@ -20,10 +20,10 @@ const Process = (props) => {
   return (
     <>
     <div className="processContainer">
-    {NAV.map((navItem) => {
+    {NAV.map((navItem, i) => {
         return (
-            <div className={props.step === navItem.number && "activeItem"}>
-            <div>{navItem.number}</div>
+            <div key={i}className={props.step === navItem.number? "activeItem" : ""}>
+            <div key={i}>{navItem.number}</div>
             {navItem.label}
           </div>
         );

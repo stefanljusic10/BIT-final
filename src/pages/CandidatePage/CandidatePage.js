@@ -45,8 +45,8 @@ const CandidatePage = () => {
 
       <h2>Reports</h2>
       <div className="reports">
-        {chosenCandidateReports.map((e) => {
-          return <CandidateReport report={e} />;
+        {chosenCandidateReports.map((e, i) => {
+          return <CandidateReport report={e} key={i} />;
         })}
       </div>
     </>

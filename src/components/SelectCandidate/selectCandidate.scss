@@ -1,4 +1,4 @@
-.candidate-card {
+.candidate-card2 {
     display: flex;
     width: 40%;
     margin: 10px;
@@ -10,9 +10,11 @@
     img {
       width: 30%;
       overflow: hidden;
+      display: inline-block;
     }
 
     .nameEmail {
+      display: inline-block;
       padding: 5px;
       margin-top: 10px;
       border: none;
