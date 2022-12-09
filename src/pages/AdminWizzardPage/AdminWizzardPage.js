@@ -9,22 +9,18 @@ import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 
 const AdminWizzardPage = (props) => {
   const [step, setStep] = useState(1);
-  const [candidateSelected, setCandidateSelected] = useState();
+  const [candidateSelected, setCandidateSelected] = useState({});
   const { data, searchValue } = useContext(DataContext);
   const search = data.candidates.filter((e) =>
     e.name.toLowerCase().includes(searchValue.toLowerCase())
   );
-
-
-    console.log(candidateSelected);
-  
 
   return (
     <>
       <div className="adminWizzard1">
         <div className="selectContainer">
           <Process step={step} />
-          <ProcessSelected />
+          {step !== 1 && <ProcessSelected candidateSelected={candidateSelected} />}
         </div>
         <div className="candidateContainer">
           <div>

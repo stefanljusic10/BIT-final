@@ -1,3 +1,12 @@
 .processSelected {
-    border: 1px solid black;
+    border-top: 2px solid black;
+    margin-top: 50px;
+    padding: 40px 0;
+    .candidateName {
+        color: black;
+        & > p {
+            margin: 10px 0;
+            font-size: x-large;
+        }
+    }
 }

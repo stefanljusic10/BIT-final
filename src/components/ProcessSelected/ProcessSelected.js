@@ -1,10 +1,15 @@
 import React from 'react'
 import "./processSelected.scss"
 
-const ProcessSelected = () => {
+
+const ProcessSelected = (props) => {
   return (
     <>
-    <div className="processSelected">ProcessSelected</div>
+    <div className="processSelected">Candidate:
+    <div className="candidateName">
+        <p>{props.candidateSelected.name}</p>
+    </div>
+    </div>
     </>
   )
 }
