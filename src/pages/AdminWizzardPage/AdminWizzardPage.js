@@ -24,7 +24,7 @@ const AdminWizzardPage = () => {
         </div>
         <div className="candidateContainer">
           {step < 3 && <Search />}
-          {step === 1 && <SelectCandidate setCandidateSelected={setCandidateSelected} search={search} />}
+          {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
           {step === 2 && <SelectCompany search={search} />}
           {step === 3 && <FillReportDetail candidateSelected={candidateSelected} />}
           <div className="buttonContainer">
