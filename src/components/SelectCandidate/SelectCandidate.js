@@ -1,5 +1,5 @@
 import React from 'react';
-import CandidateCard from './CandidateCard/CandidateCard';
+import CandidateCard from './SelectCandidateCard/SelectCandidateCard';
 import "./selectCandidate.scss";
 
 const SelectCandidate = ({ search, setCandidateSelected }) => {
