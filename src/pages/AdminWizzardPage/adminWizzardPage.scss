@@ -9,15 +9,6 @@
     padding: 0px 5% 3% 7%;
     margin-top: 50px;
     height: 70vh;
-    & > div {
-      & > div {
-        display: inline-block;
-        border: 2px solid gray;
-        border-radius: 50%;
-        padding: 10px 15px;
-        margin: 10px;
-      }
-    }
   }
   .activeItem {
     color: black;
@@ -25,7 +16,6 @@
       background-color: rgb(84, 164, 255);
       color: white;
     }
-
   }
   .candidateContainer {
     width: 70%;
@@ -46,7 +36,6 @@
     .backButton {
       background-color: palevioletred;
     }
-
     & > div {
       padding-right: 5%;
       display: flex;

@@ -2,24 +2,9 @@ import React, { useState, useContext } from "react";
 import "./adminWizzardPage.scss";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
-import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCard";
 import SelectCandidate from "../../components/SelectCandidate/SelectCandidate";
 import SelectCompany from "../../components/SelectCompany/SelectCompany";
-
-const NAV = [
-  {
-    number: 1,
-    label: "Select Candidate",
-  },
-  {
-    number: 2,
-    label: "Select Company",
-  },
-  {
-    number: 3,
-    label: "Fill Report Details",
-  },
-];
+import Process from "../../components/Process/Process";
 
 const AdminWizzardPage = (props) => {
   const [step, setStep] = useState(1);
@@ -31,14 +16,7 @@ const AdminWizzardPage = (props) => {
     <>
       <div className="adminWizzard1">
         <div className="selectContainer">
-          {NAV.map((navItem) => {
-            return (
-              <div className={step === navItem.number && "activeItem"}>
-                <div>{navItem.number}</div>
-                {navItem.label}
-              </div>
-            );
-          })}
+          <Process step={step} />
         </div>
         <div className="candidateContainer">
           <div>
