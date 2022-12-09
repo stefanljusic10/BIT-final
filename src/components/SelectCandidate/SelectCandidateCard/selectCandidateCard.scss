@@ -5,6 +5,12 @@
   background-color: rgb(226, 226, 226);
   overflow: hidden;
   box-shadow: 9px 14px 20px -22px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: ease 100ms;
+  }
 
   & > img {
     width: 30%;
