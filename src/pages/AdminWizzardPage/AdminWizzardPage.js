@@ -5,6 +5,7 @@ import DataContext from "../../utils/context";
 import SelectCandidate from "../../components/SelectCandidate/SelectCandidate";
 import SelectCompany from "../../components/SelectCompany/SelectCompany";
 import Process from "../../components/Process/Process";
+import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 
 const AdminWizzardPage = (props) => {
   const [step, setStep] = useState(1);
@@ -23,6 +24,7 @@ const AdminWizzardPage = (props) => {
       <div className="adminWizzard1">
         <div className="selectContainer">
           <Process step={step} />
+          <ProcessSelected />
         </div>
         <div className="candidateContainer">
           <div>
