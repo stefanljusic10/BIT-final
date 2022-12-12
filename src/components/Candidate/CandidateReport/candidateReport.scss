@@ -23,11 +23,8 @@
   .box {
     display: flex;
     flex-direction: row;
-    // align-items: center;
     padding: 1rem 0;
-    -webkit-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
+    @include cardBoxShadow;
 
     @include respond(bp-768){
       flex-direction: column;
@@ -38,9 +35,7 @@
       border-right: 1px solid gray;
       padding: 0 1rem;
       @include respond(bp-768){
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include center-x;
         border-right: none;
         border-bottom: 1px solid gray;
         padding: .4rem 0;

@@ -1,4 +1,20 @@
+@mixin cardBoxShadow{
+    -webkit-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
+}
 
+@mixin center-x-y{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center-x{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 // MEDIA QUERIES - RESPONSIVNESS
 @mixin respond($breakpoint) {

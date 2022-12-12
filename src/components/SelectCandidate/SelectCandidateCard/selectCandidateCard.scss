@@ -6,8 +6,8 @@
   border-radius: 1rem;
   background-color: rgb(226, 226, 226);
   overflow: hidden;
-  box-shadow: 9px 14px 20px -22px rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  @include cardBoxShadow;
 
   @include respond(bp-900){
     flex-direction: column;

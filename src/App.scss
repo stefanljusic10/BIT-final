@@ -2,8 +2,13 @@
 @import './scss/variables';
 @import './scss/mixins';
 
+// #root{
+//   min-height: 100%;
+// }
+
 .main-box{
     padding: 2rem;
+    min-height: 100vh;
 
     @include respond(bp-640){
         padding: 1rem;

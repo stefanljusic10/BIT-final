@@ -10,9 +10,7 @@
       }
 
       & > div {
-        display: inherit;
-        justify-content: center;
-        align-items: center;
+        @include center-x-y;
         border: 2px solid gray;
         border-radius: 50%;
         width: 2.5rem;

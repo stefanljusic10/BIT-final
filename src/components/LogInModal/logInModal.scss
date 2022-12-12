@@ -7,10 +7,8 @@
   bottom: 0;
   left: 0;
   background-color: blue;
-  display: flex;
+  @include center-x-y;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   @include respond(bp-768){
     padding: 2rem;
