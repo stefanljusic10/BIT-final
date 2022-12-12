@@ -2,11 +2,19 @@ import React, { useContext } from "react";
 import DataContext from "../../utils/context";
 import "./selectCompany.scss";
 
-const SelectCompany = () => {
+const SelectCompany = ({ setSelectedCompany }) => {
   const { data } = useContext(DataContext);
   return (
     <div>
-      {data.companies.map(e => <div className="selectCompany" key={e.id}>{e.name}</div>)}
+      {data.companies.map((company) => (
+        <div
+          onClick={() => setSelectedCompany(company)}
+          className="selectCompany"
+          key={company.id}
+        >
+          {company.name}
+        </div>
+      ))}
     </div>
   );
 };

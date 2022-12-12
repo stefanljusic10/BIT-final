@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  h2 {
+  & > h2 {
     font-weight: 300;
     text-align: start;
     padding: 0;
@@ -22,19 +22,19 @@
     margin-bottom: 10px;
   }
 
-  .report-info {
+  & > .report-info {
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    div {
+    & > div {
       margin-bottom: 10px;
 
-      span {
+      & > span {
         font-size: 0.8em;
       }
-      h5 {
+      & > h5 {
         font-size: 1.2em;
         color: gray;
         font-weight: 400;
@@ -42,11 +42,11 @@
     }
   }
 
-  .notes {
+  & > .notes {
     width: 50%;
   }
 
-  .close {
+  & > .close {
     position: absolute;
     font-weight: bold;
     right: -30px;

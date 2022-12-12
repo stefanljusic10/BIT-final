@@ -12,10 +12,19 @@ import "./adminWizzardPage.scss";
 const AdminWizzardPage = () => {
   const { data, searchValue, setCurrentPage } = useContext(DataContext);
   const [step, setStep] = useState(1);
-  const [candidateSelected, setCandidateSelected] = useState(false);
-  const search = data.candidates.filter((e) =>
-    e.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const [selectedCandidate, setSelectedCandidate] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('')
+  const search = data.candidates.filter((e) =>e.name.toLowerCase().includes(searchValue.toLowerCase()));
+
+  // console.log(selectedCandidate);
+
+  const nextStep = () => {
+    // console.log('dasd');
+    if(step === 1 && selectedCandidate)
+      setStep(step + 1)
+    if(step === 2 && selectedCompany)
+      setStep(step + 1)
+  }
 
   useEffect(() => {
     setCurrentPage("Create Reports");
@@ -26,38 +35,23 @@ const AdminWizzardPage = () => {
       <div className="adminWizzard">
         <div className="selectContainer">
           <Process step={step} />
-          {step > 1 && (
-            <ProcessSelected candidateSelected={candidateSelected} />
-          )}
+          {selectedCandidate && <ProcessSelected selectedCandidate={selectedCandidate} selectedCompany={selectedCompany} />}
         </div>
         <div className="candidateContainer">
           {step < 3 && <Search />}
           {step === 1 && (
             <SelectCandidate
-              candidateSelected={candidateSelected}
-              setCandidateSelected={setCandidateSelected}
+              candidateSelected={selectedCandidate}
+              setSelectedCandidate={setSelectedCandidate}
               search={search}
             />
           )}
-          {step === 2 && <SelectCompany search={search} />}
-          {step === 3 && (
-            <FillReportDetail candidateSelected={candidateSelected} />
-          )}
+          {step === 2 && <SelectCompany setSelectedCompany={setSelectedCompany} search={search} />}
+          {step === 3 && <FillReportDetail candidateSelected={selectedCandidate} />}
           <div className="buttonContainer">
-            {step > 1 && (
-              <Button
-                name="BACK"
-                btnClass="backButton"
-                method={() => setStep(step - 1)}
-              />
-            )}
-            {step < 3 && (
-              <Button
-                name="NEXT"
-                btnClass="nextButton"
-                method={() => candidateSelected && setStep(step + 1)}
-              />
-            )}
+            {step > 1 && <Button name="BACK" btnClass="backButton" method={() => setStep(step - 1)} />}
+            {step < 3 && <Button name="NEXT" btnClass="nextButton" method={nextStep} />}
+            {step === 3 && <Button name="SUBMIT" btnClass="submitButton" />}
           </div>
         </div>
       </div>

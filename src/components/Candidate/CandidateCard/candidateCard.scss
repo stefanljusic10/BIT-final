@@ -3,7 +3,8 @@
 .candidate-card {
     width: 100%;
     text-align: center;
-    border: 5px solid blue;
+    @include cardBoxShadow;
+    cursor: pointer;
 
     @include respond(bp-768){
       width: 60%;

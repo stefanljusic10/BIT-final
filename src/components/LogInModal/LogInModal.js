@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../../utils/context";
+import Button from "../Button/Button";
 import "./logInModal.scss";
 
 const LogInModal = () => {
@@ -74,13 +75,14 @@ const LogInModal = () => {
             setLogData({ ...logData, [e.target.name]: e.target.value })
           }
         ></input>
-        <button
+        <Button name="Log in" btnClass="loginButton" method={(e) => validateLogUserData(e, logData.email, logData.password)} />
+        {/* <button
           onClick={(e) =>
             validateLogUserData(e, logData.email, logData.password)
           }
         >
           Log In
-        </button>
+        </button> */}
       </form>
     </div>,
     document.getElementById("modal")

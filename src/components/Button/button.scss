@@ -1,9 +1,11 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .nextButton,
-.backButton {
+.backButton,
+.submitButton {
   padding: 0.8rem 1.5rem;
-  background-color: rgb(84, 164, 255);
+  background-color: $btnBlue;
   border: none;
   border-radius: 0.7rem;
   color: white;
@@ -16,16 +18,35 @@
 }
 
 .nextButton {
-  background-color: rgb(84, 164, 255);
+  background-color: $btnBlue;
 }
 .backButton {
-  background-color: palevioletred;
+  background-color: $btnRed;
+}
+.submitButton {
+  background-color: $btnGreen;
 }
 
 .nextButton:hover,
 .backButton:hover {
-  cursor: pointer;
   transform: scale(1.05);
   transition: 100ms;
   box-shadow: none;
+  cursor: pointer;
+}
+
+.loginButton {
+  width: 100%;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  height: 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+
+  &:hover{
+    background-color: white;
+    color: $color-blue;
+    transition: ease 500ms;
+  }
 }

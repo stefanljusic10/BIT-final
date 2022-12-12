@@ -15,9 +15,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 const App = () => {
   const data = useData();
   const [searchValue, setSearchValue] = useState("");
-  const [isLogged, setIsLogged] = useState(
-    sessionStorage.getItem("accessToken")
-  );
+  const [isLogged, setIsLogged] = useState(sessionStorage.getItem("accessToken"));
   const [reportId, setReportId] = useState();
   const [currentPage, setCurrentPage] = useState("Candidates");
 

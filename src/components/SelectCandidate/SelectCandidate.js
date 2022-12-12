@@ -1,16 +1,16 @@
 import React from "react";
-import CandidateCard from "./SelectCandidateCard/SelectCandidateCard";
+import SelectCandidateCard from "./SelectCandidateCard/SelectCandidateCard";
 import "./selectCandidate.scss";
 
-const SelectCandidate = ({ search, setCandidateSelected, candidateSelected }) => {
+const SelectCandidate = ({ search, selectedCandidate, setSelectedCandidate }) => {
   return (
-      <div className="candidateCardsContainer">
-        {search.map((e, i) => (
-          <CandidateCard isSelected={candidateSelected?.id===e.id}
-            candidateSelected={candidateSelected}
-            setCandidateSelected={setCandidateSelected}
-            key={i}
-            candidate={e}
+      <div className="selectCandidate">
+        {search.map(candidate => (
+          <SelectCandidateCard
+            isSelected={selectedCandidate?.id === candidate.id}
+            key={candidate.id}
+            candidate={candidate}
+            setSelectedCandidate={setSelectedCandidate}
           />
         ))}
       </div>

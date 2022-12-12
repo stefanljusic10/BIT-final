@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 #loginModal {
   position: absolute;
@@ -6,7 +7,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: blue;
+  background-color: $color-blue;
   @include center-x-y;
   flex-direction: column;
 
@@ -45,8 +46,7 @@
     }
 
     & > .email,
-    .password,
-    button {
+    .password{
       height: 2rem;
       border-radius: 2rem;
       border: none;
@@ -72,13 +72,6 @@
 
     & > .email-error, .password-error{
       border: 2px solid red;
-    }
-
-    & > button {
-      width: 100%;
-      border: 2px solid white;
-      background-color: blue;
-      color: white;
     }
   }
 }

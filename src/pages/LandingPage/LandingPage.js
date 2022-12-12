@@ -10,12 +10,8 @@ const LandingPage = () => {
     setCurrentPage("Candidates");
   }, []);
 
-  const search = data.candidates.filter((e) => {
-    return e.name.toLowerCase().includes(searchValue.toLowerCase());
-  });
-  const renderCandidateCards = search.map((e) => (
-    <CandidateCard key={e.id} candidate={e} />
-  ));
+  const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
+  const renderCandidateCards = search.map((e) => <CandidateCard key={e.id} candidate={e} />);
 
   return (
     <>
