@@ -13,8 +13,9 @@ const AdminWizzardPage = () => {
   const { data, searchValue } = useContext(DataContext);
   const [step, setStep] = useState(1);
   const [candidateSelected, setCandidateSelected] = useState(false);
+  const [companySelected, setCompanySelected] = useState(false);
   const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
-
+  const searchCompanies = data.companies.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
   return (
     <>
       <div className="adminWizzard">
@@ -25,7 +26,7 @@ const AdminWizzardPage = () => {
         <div className="candidateContainer">
           {step < 3 && <Search />}
           {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
-          {step === 2 && <SelectCompany search={search} />}
+          {step === 2 && <SelectCompany search={searchCompanies} />}
           {step === 3 && <FillReportDetail candidateSelected={candidateSelected} />}
           <div className="buttonContainer">
             {step > 1 && <Button name="BACK" btnClass='backButton' method={() => setStep(step - 1)} />}

@@ -5,11 +5,11 @@ import "./selectCandidate.scss";
 const SelectCandidate = ({ search, setCandidateSelected, candidateSelected }) => {
   return (
       <div className="candidateCardsContainer">
-        {search.map((e, i) => (
+        {search.map((e) => (
           <CandidateCard isSelected={candidateSelected?.id===e.id}
             candidateSelected={candidateSelected}
             setCandidateSelected={setCandidateSelected}
-            key={i}
+            key={e.id}
             candidate={e}
           />
         ))}
