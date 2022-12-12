@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DataContext from "../../utils/context";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
@@ -17,7 +17,10 @@ const CandidatePage = () => {
     setCurrentPage,
   } = useContext(DataContext);
   const { id } = useParams();
-  setCurrentPage("");
+
+  useEffect(() => {
+    setCurrentPage("");
+  }, []);
 
   const chosenCandidate = data.candidates.find((e) => e.id == id);
   const chosenCandidateReports = data?.reports.filter(

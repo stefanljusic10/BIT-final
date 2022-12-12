@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
 import CandidateModal from "../../components/Candidate/CandidateModal/CandidateModal";
 import DataContext from "../../utils/context";
@@ -14,7 +14,10 @@ const AdminMainPage = () => {
     setCurrentPage,
   } = useContext(DataContext);
   const listOfReports = data?.reports;
-  setCurrentPage("Reports");
+
+  useEffect(() => {
+    setCurrentPage("Reports");
+  }, []);
 
   return (
     <>

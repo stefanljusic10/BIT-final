@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
 import SelectCandidate from "../../components/SelectCandidate/SelectCandidate";
@@ -17,7 +17,9 @@ const AdminWizzardPage = () => {
     e.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
-  setCurrentPage("Create Reports");
+  useEffect(() => {
+    setCurrentPage("Create Reports");
+  }, []);
 
   return (
     <>

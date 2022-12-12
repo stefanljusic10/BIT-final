@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DataContext from "../../utils/context";
 import CandidateCard from "../../components/Candidate/CandidateCard/CandidateCard";
 import Search from "../../components/Search/Search";
@@ -6,7 +6,10 @@ import "./landingPage.scss";
 
 const LandingPage = () => {
   const { data, searchValue, setCurrentPage } = useContext(DataContext);
-  setCurrentPage("Candidates");
+  useEffect(() => {
+    setCurrentPage("Candidates");
+  }, []);
+
   const search = data.candidates.filter((e) => {
     return e.name.toLowerCase().includes(searchValue.toLowerCase());
   });
