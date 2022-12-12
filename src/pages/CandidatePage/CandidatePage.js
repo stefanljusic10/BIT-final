@@ -43,6 +43,7 @@ const CandidatePage = () => {
                 clickModal={setIsReportClicked}
                 report={e}
                 setReportId={setReportId}
+                key={e.id}
               />
             );
           })}
