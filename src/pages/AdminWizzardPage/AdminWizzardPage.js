@@ -21,15 +21,17 @@ const AdminWizzardPage = () => {
       <div className="adminWizzard">
         <div className="selectContainer">
           <Process step={step} />
-          {step > 1 && <ProcessSelected candidateSelected={candidateSelected} />}
+          {step > 1 && <ProcessSelected candidateSelected={candidateSelected} companySelected={companySelected} step={step} />}
         </div>
         <div className="candidateContainer">
           {step < 3 && <Search />}
           {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
-          {step === 2 && <SelectCompany search={searchCompanies} />}
-          {step === 3 && <FillReportDetail candidateSelected={candidateSelected} />}
+          {step === 2 && <SelectCompany companySelected={companySelected} setCompanySelected={setCompanySelected} search={searchCompanies} />}
+          {step === 3 && <FillReportDetail candidateSelected={candidateSelected} companySelected={companySelected} />}
           <div className="buttonContainer">
-            {step > 1 && <Button name="BACK" btnClass='backButton' method={() => setStep(step - 1)} />}
+            {step > 1 && <Button name="BACK" btnClass='backButton' method={() => {
+              setCompanySelected(false) 
+              setStep(step - 1)}} />}
             {step < 3 && <Button name="NEXT" btnClass='nextButton' method={() => candidateSelected && setStep(step + 1)} />}
           </div>
         </div>

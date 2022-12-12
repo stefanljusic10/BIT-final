@@ -18,7 +18,6 @@ const NAV = [
 
 const Process = ({ step }) => {
   return (
-    <>
     <div className="processContainer">
     {NAV.map((navItem, i) => {
         return (
@@ -29,7 +28,6 @@ const Process = ({ step }) => {
         );
     })}
     </div>
-    </>
   )
 }
 
