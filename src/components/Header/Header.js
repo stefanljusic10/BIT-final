@@ -4,7 +4,7 @@ import DataContext from "../../utils/context";
 import "./header.scss";
 
 const Header = () => {
-  const { isLogged, setIsLogged } = useContext(DataContext)
+  const { isLogged, setIsLogged } = useContext(DataContext);
 
   const logOut = () => {
     sessionStorage.clear();
@@ -16,9 +16,14 @@ const Header = () => {
       <h1>{!isLogged ? "Interviews Reports" : "Reports Administration"}</h1>
 
       <ul>
-        <Link to={!isLogged ? "/" : "/admin"}>
-          <li>{!isLogged ? "Candidates" : "Reports"}</li>
+        <Link to="/">
+          <li>Candidates</li>
         </Link>
+        {isLogged && (
+          <Link to="admin">
+            <li>Reports</li>
+          </Link>
+        )}
         <Link to={!isLogged ? "/login" : "/createReports"}>
           <li>{!isLogged ? "Log in" : "Create Reports"}</li>
         </Link>

@@ -6,15 +6,20 @@ import ViewDelete from "./ViewDelete/ViewDelete";
 import Item from "./Item/Item";
 import "./candidateReport.scss";
 
-const CandidateReport = ({ report, clickModal, setReportId }) => {
+const CandidateReport = ({
+  report,
+  clickModal,
+  setReportId,
+  isSquare = false,
+}) => {
   const { isLogged } = useContext(DataContext);
   const interviewDate = moment(report.interviewDate).format("LL");
   const statusClass =
     report.status === "passed" ? "status passed" : "status declined";
 
   return (
-    <div className={isLogged ? "candidateReport" : "candidateReport-user"}>
-      <div className={isLogged ? "box" : "box-user"}>
+    <div className={!isSquare ? "candidateReport" : "candidateReport-user"}>
+      <div className={!isSquare ? "box" : "box-user"}>
         <Item
           itemClass={"company"}
           name={report.companyName}

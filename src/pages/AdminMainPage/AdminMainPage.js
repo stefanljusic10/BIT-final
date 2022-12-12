@@ -27,6 +27,7 @@ const AdminMainPage = () => {
             reportId={reportId}
           />
         )}
+        {isReportClicked && <div className="modal-background"></div>}
       </div>
     </>
   );

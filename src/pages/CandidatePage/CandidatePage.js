@@ -29,6 +29,7 @@ const CandidatePage = () => {
           {chosenCandidateReports.map((e) => {
             return (
               <CandidateReport
+                isSquare={true}
                 clickModal={setIsReportClicked}
                 report={e}
                 setReportId={setReportId}
@@ -44,6 +45,7 @@ const CandidatePage = () => {
             reportId={reportId}
           />
         )}
+        {isReportClicked && <div className="modal-background"></div>}
       </div>
     </>
   );
