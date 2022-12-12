@@ -6,13 +6,13 @@ import "./landingPage.scss";
 
 const LandingPage = () => {
   const { data, searchValue, setCurrentPage } = useContext(DataContext);
+  setCurrentPage("Candidates");
   const search = data.candidates.filter((e) => {
     return e.name.toLowerCase().includes(searchValue.toLowerCase());
   });
   const renderCandidateCards = search.map((e) => (
     <CandidateCard key={e.id} candidate={e} />
   ));
-  setCurrentPage("Candidates");
 
   return (
     <>

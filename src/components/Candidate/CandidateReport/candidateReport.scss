@@ -1,22 +1,22 @@
-@import '../../../scss/mixins';
+@import "../../../scss/mixins";
 // Style for admin page
 .candidateReport {
   padding: 0 10rem;
 
-  @include respond(bp-1200){
+  @include respond(bp-1200) {
     padding: 0 6rem;
   }
-  @include respond(bp-1024){
+  @include respond(bp-1024) {
     padding: 0;
   }
-  @include respond(bp-768){
+  @include respond(bp-768) {
     padding: 0 6rem;
   }
-  @include respond(bp-640){
+  @include respond(bp-640) {
     padding: 0;
   }
 
-  &:not(:first-child){
+  &:not(:first-child) {
     margin-top: 1.5rem;
   }
 
@@ -26,23 +26,26 @@
     padding: 1rem 0;
     @include cardBoxShadow;
 
-    @include respond(bp-768){
+    @include respond(bp-768) {
       flex-direction: column;
       padding: 1rem;
     }
 
-    & > .company, .candidate, .date, .status {
+    & > .company,
+    .candidate,
+    .date,
+    .status {
       border-right: 1px solid gray;
       padding: 0 1rem;
-      @include respond(bp-768){
+      @include respond(bp-768) {
         @include center-x;
         border-right: none;
         border-bottom: 1px solid gray;
-        padding: .4rem 0;
+        padding: 0.4rem 0;
       }
 
-      & > h5{
-        @include respond(bp-768){
+      & > h5 {
+        @include respond(bp-768) {
           order: 2;
         }
       }
@@ -50,21 +53,71 @@
       & > span {
         color: gray;
         font-size: small;
-        @include respond(bp-768){
+        @include respond(bp-768) {
           order: 1;
         }
       }
     }
 
-    & > .company, .candidate, .date {
+    & > .company,
+    .candidate,
+    .date {
       flex-basis: 25%;
     }
 
     & > .status {
       flex-basis: 15%;
 
-      &.passed{ color: green; }
-      &.declined{ color: red; }
+      &.passed {
+        color: green;
+      }
+      &.declined {
+        color: red;
+      }
+    }
+  }
+}
+
+// Style for user page
+
+.candidateReport-user {
+  display: flex;
+  justify-content: flex-start;
+  .box-user {
+    position: relative;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+
+    .view-delete {
+      justify-content: flex-start;
+    }
+
+    & > .company,
+    .candidate,
+    .date,
+    .status {
+      margin-bottom: 5px;
+    }
+
+    & > .status {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+
+      span {
+        display: none;
+      }
+
+      &.passed {
+        color: green;
+      }
+      &.declined {
+        color: red;
+      }
     }
   }
 }
