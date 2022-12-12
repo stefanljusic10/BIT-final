@@ -11,6 +11,13 @@
 
 .nextButton {
   background-color: rgb(84, 164, 255);
+  transition: background-color 0.3s;
+  &:disabled {
+    background-color: gray;
+    &:hover {
+      transform: none;
+    }
+  } 
 }
 .backButton {
   background-color: palevioletred;

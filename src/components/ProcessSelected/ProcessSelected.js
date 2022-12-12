@@ -4,8 +4,12 @@ import "./processSelected.scss"
 const ProcessSelected = ({ candidateSelected, companySelected, step }) => {
   return (
     <div className="processSelected">
-      <div className={`candidateName ${step!==1 ? "candidateNameActive" : ""}`}>{candidateSelected.name}</div>
-      <div className={`companyName ${step===3 ? "companyNameActive" : ""}`}>{companySelected.name}</div>
+      <div className={`candidateName ${step!==1 ? "candidateNameActive" : ""}`}>
+        <div>Canditate:</div>
+        {candidateSelected.name}</div>
+      <div className={`companyName ${step===3 ? "companyNameActive" : ""}`}>
+        <div>Company:</div>
+        {companySelected.name}</div>
     </div>
   )
 }
