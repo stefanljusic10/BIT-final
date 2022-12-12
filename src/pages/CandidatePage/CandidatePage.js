@@ -8,15 +8,10 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import "./candidatePage.scss";
 
 const CandidatePage = () => {
-  const {
-    data,
-    isReportClicked,
-    setIsReportClicked,
-    reportId,
-    setReportId,
-    setCurrentPage,
-  } = useContext(DataContext);
+  const { data, reportId, setReportId, setCurrentPage } =
+    useContext(DataContext);
   const { id } = useParams();
+  const [isReportClicked, setIsReportClicked] = useState(false);
 
   useEffect(() => {
     setCurrentPage("");

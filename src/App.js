@@ -18,7 +18,6 @@ const App = () => {
   const [isLogged, setIsLogged] = useState(
     sessionStorage.getItem("accessToken")
   );
-  const [isReportClicked, setIsReportClicked] = useState(false);
   const [reportId, setReportId] = useState();
   const [currentPage, setCurrentPage] = useState("Candidates");
 
@@ -31,8 +30,6 @@ const App = () => {
           setSearchValue,
           isLogged,
           setIsLogged,
-          isReportClicked,
-          setIsReportClicked,
           reportId,
           setReportId,
           currentPage,
