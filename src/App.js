@@ -20,6 +20,7 @@ const App = () => {
   );
   const [isReportClicked, setIsReportClicked] = useState(false);
   const [reportId, setReportId] = useState();
+  const [currentPage, setCurrentPage] = useState("Candidates");
 
   return (
     <>
@@ -34,6 +35,8 @@ const App = () => {
           setIsReportClicked,
           reportId,
           setReportId,
+          currentPage,
+          setCurrentPage,
         }}
       >
         <BrowserRouter>

@@ -10,26 +10,52 @@ import FillReportDetail from "../../components/FillReportDetail/FillReportDetail
 import "./adminWizzardPage.scss";
 
 const AdminWizzardPage = () => {
-  const { data, searchValue } = useContext(DataContext);
+  const { data, searchValue, setCurrentPage } = useContext(DataContext);
   const [step, setStep] = useState(1);
   const [candidateSelected, setCandidateSelected] = useState(false);
-  const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
+  const search = data.candidates.filter((e) =>
+    e.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  setCurrentPage("Create Reports");
 
   return (
     <>
       <div className="adminWizzard">
         <div className="selectContainer">
           <Process step={step} />
-          {step > 1 && <ProcessSelected candidateSelected={candidateSelected} />}
+          {step > 1 && (
+            <ProcessSelected candidateSelected={candidateSelected} />
+          )}
         </div>
         <div className="candidateContainer">
           {step < 3 && <Search />}
-          {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
+          {step === 1 && (
+            <SelectCandidate
+              candidateSelected={candidateSelected}
+              setCandidateSelected={setCandidateSelected}
+              search={search}
+            />
+          )}
           {step === 2 && <SelectCompany search={search} />}
-          {step === 3 && <FillReportDetail candidateSelected={candidateSelected} />}
+          {step === 3 && (
+            <FillReportDetail candidateSelected={candidateSelected} />
+          )}
           <div className="buttonContainer">
-            {step > 1 && <Button name="BACK" btnClass='backButton' method={() => setStep(step - 1)} />}
-            {step < 3 && <Button name="NEXT" btnClass='nextButton' method={() => candidateSelected && setStep(step + 1)} />}
+            {step > 1 && (
+              <Button
+                name="BACK"
+                btnClass="backButton"
+                method={() => setStep(step - 1)}
+              />
+            )}
+            {step < 3 && (
+              <Button
+                name="NEXT"
+                btnClass="nextButton"
+                method={() => candidateSelected && setStep(step + 1)}
+              />
+            )}
           </div>
         </div>
       </div>

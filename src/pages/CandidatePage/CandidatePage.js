@@ -8,9 +8,16 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import "./candidatePage.scss";
 
 const CandidatePage = () => {
-  const { data, isReportClicked, setIsReportClicked, reportId, setReportId } =
-    useContext(DataContext);
+  const {
+    data,
+    isReportClicked,
+    setIsReportClicked,
+    reportId,
+    setReportId,
+    setCurrentPage,
+  } = useContext(DataContext);
   const { id } = useParams();
+  setCurrentPage("");
 
   const chosenCandidate = data.candidates.find((e) => e.id == id);
   const chosenCandidateReports = data?.reports.filter(

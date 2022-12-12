@@ -5,9 +5,16 @@ import DataContext from "../../utils/context";
 import "./adminMainPage.scss";
 
 const AdminMainPage = () => {
-  const { data, isReportClicked, setIsReportClicked, reportId, setReportId } =
-    useContext(DataContext);
+  const {
+    data,
+    isReportClicked,
+    setIsReportClicked,
+    reportId,
+    setReportId,
+    setCurrentPage,
+  } = useContext(DataContext);
   const listOfReports = data?.reports;
+  setCurrentPage("Reports");
 
   return (
     <>
