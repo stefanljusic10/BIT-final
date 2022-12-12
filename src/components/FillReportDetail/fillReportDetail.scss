@@ -1,3 +1,21 @@
 .fillReportDetail{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
+.interviewDate{
+   margin: 1rem 2rem;
+   width: 33%;
+    & > input {
+        width: 100%;
+    }
+}
+
+.phase{
+    margin: 1rem 2rem;
+}
+
+.status{
+    margin: 1rem 2rem;
 }
