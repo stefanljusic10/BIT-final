@@ -1,15 +1,43 @@
+@import '../../scss/mixins';
+
 #searchWrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid gray;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+
+  & > h2{
+    font-size: 1.2rem;
+
+    @include respond(bp-768){
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+    }
+    @include respond(bp-640){
+      display: none;
+    }
+  }
+
+  @include respond(bp-768){
+    flex-direction: column;
+  }
 }
 
 .candidate-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 3%;
-  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+
+  @include respond(bp-1200){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(bp-1024){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(bp-768){
+    grid-template-columns: 1fr;
+  }
 }
 

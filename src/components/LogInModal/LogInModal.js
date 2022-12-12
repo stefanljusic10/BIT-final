@@ -83,7 +83,7 @@ const LogInModal = () => {
         </button>
       </form>
     </div>,
-    document.getElementById("login-modal")
+    document.getElementById("modal")
   );
 };
 

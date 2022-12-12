@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -5,21 +7,45 @@
   background-color: blue;
   padding: 1rem 2rem;
 
-  & a,
-  h1 {
+  @include respond(bp-640){
+    flex-direction: column;
+  }
+
+  & > h1{
+    font-size: 2rem;
+
+    @include respond(bp-640){
+      margin-bottom: 2rem;
+    }
+  }
+
+  & a, h1 {
     color: white;
     text-decoration: none;
-    text-align: left;
   }
 
   & > ul {
+    font-size: 1.2rem;
+    @include respond(bp-640){
+      text-align: center;
+    }
+
     & > a {
       list-style: none;
       display: inline-block;
+
+      @include respond(bp-640){
+        display: block;
+      }
     }
 
     & > a:not(:last-child) {
       margin-right: 2rem;
+
+      @include respond(bp-640){
+        margin-right: 0;
+        margin-bottom: .5rem;
+      }
     }
   }
 }

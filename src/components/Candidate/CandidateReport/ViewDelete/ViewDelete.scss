@@ -1,3 +1,5 @@
+@import '../../../../scss/mixins';
+
 .view-delete {
     display: flex;
     flex-basis: 10%;
@@ -11,9 +13,14 @@
       width: 1.7rem;
       border: none;
       background-color: transparent;
+      @include respond(bp-768){
+        width: 3rem;
+        margin-top: 1rem;
+      }
 
       & > svg {
         width: 100%;
+
       }
     }
   }

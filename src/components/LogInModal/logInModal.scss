@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 #loginModal {
   position: absolute;
   top: 0;
@@ -10,6 +12,10 @@
   justify-content: center;
   align-items: center;
 
+  @include respond(bp-768){
+    padding: 2rem;
+  }
+  
   & > a {
     position: absolute;
     top: 2rem;
@@ -23,6 +29,13 @@
 
   & > form {
     width: 40%;
+
+    @include respond(bp-1024){
+      width: 60%;
+    }
+    @include respond(bp-768){
+      width: 100%;
+    }
 
     & > .error-label{
       color: red;
@@ -39,6 +52,13 @@
       height: 2rem;
       border-radius: 2rem;
       border: none;
+
+      @include respond(bp-1024){
+        height: 2.2rem;
+      }
+      @include respond(bp-768){
+        height: 2.4rem;
+      }
     }
 
     & > .email,

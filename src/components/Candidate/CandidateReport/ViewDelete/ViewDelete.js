@@ -7,7 +7,10 @@ const ViewDelete = ({ report }) => {
   const { data } = useContext(DataContext)
   const deleteAndRefreshReports = () => {
     deleteReport(report.id)
-    data.setRefreshReports(!data.refreshReports)
+    .then(res => {
+      if(res.status >= 200 && res.status < 400)
+        data.setRefreshReports(!data.refreshReports)
+    })
   }
   
   return (

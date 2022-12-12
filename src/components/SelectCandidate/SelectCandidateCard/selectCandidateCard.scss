@@ -1,3 +1,5 @@
+@import '../../../scss/mixins';
+
 .selectCandidateCard {
   display: flex;
   width: 100%;
@@ -7,6 +9,11 @@
   box-shadow: 9px 14px 20px -22px rgba(0, 0, 0, 0.75);
   cursor: pointer;
 
+  @include respond(bp-900){
+    flex-direction: column;
+    width: 100%;
+  }
+
   &:hover{
     transform: scale(1.02);
     transition: ease 100ms;
@@ -15,6 +22,10 @@
   & > img {
     width: 30%;
     overflow: hidden;
+
+    @include respond(bp-900){
+      width: 100%;
+    }
   }
 
   & > .nameEmail {
@@ -24,12 +35,20 @@
     padding: 0.5rem;
     border: none;
     border-radius: 0;
+
     & > p {
       margin: 2px;
     }
     & > p:nth-of-type(2) {
       color: gray;
-      font-size: 10px;
+      font-size: .9rem;
+      @include respond(bp-1200){
+        font-size: 1.2rem;
+      }
+    }
+
+    @include respond(bp-1200){
+      font-size: 1.8rem;
     }
   }
 }
