@@ -6,7 +6,7 @@ const SelectCompany = () => {
   const { data } = useContext(DataContext);
   return (
     <div>
-      {data.companies.map(e => <div className="selectCompany">{e.name}</div>)}
+      {data.companies.map(e => <div className="selectCompany" key={e.id}>{e.name}</div>)}
     </div>
   );
 };
