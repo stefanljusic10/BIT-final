@@ -18,21 +18,45 @@ const App = () => {
   const [isLogged, setIsLogged] = useState(
     sessionStorage.getItem("accessToken")
   );
+  const [isReportClicked, setIsReportClicked] = useState(false);
+  const [reportId, setReportId] = useState();
 
   return (
     <>
       <DataContext.Provider
-        value={{ data, searchValue, setSearchValue, isLogged, setIsLogged }}
+        value={{
+          data,
+          searchValue,
+          setSearchValue,
+          isLogged,
+          setIsLogged,
+          isReportClicked,
+          setIsReportClicked,
+          reportId,
+          setReportId,
+        }}
       >
         <BrowserRouter>
           <Header />
           <main className="main-box">
             <Routes>
               <Route exact path="/" element={<LandingPage />}></Route>
-              <Route exact path="/candidate/id=:id" element={<CandidatePage />}></Route>
+              <Route
+                exact
+                path="/candidate/id=:id"
+                element={<CandidatePage />}
+              ></Route>
               <Route exact path="/login" element={<LogInModal />}></Route>
-              <Route exact path="/admin" element={isLogged ? <AdminMainPage /> : <LogInModal />}></Route>
-              <Route exact path="/createReports" element={isLogged ? <AdminWizzardPage /> : <LogInModal />}></Route>
+              <Route
+                exact
+                path="/admin"
+                element={isLogged ? <AdminMainPage /> : <LogInModal />}
+              ></Route>
+              <Route
+                exact
+                path="/createReports"
+                element={isLogged ? <AdminWizzardPage /> : <LogInModal />}
+              ></Route>
               <Route path="*" element={<ErrorPage />}></Route>
             </Routes>
           </main>
