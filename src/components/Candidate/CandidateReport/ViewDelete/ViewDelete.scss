@@ -1,19 +1,25 @@
+@import "../../../../scss/mixins";
+
 .view-delete {
-    display: flex;
-    flex-basis: 10%;
-    justify-content: center;
+  display: flex;
+  flex-basis: 10%;
+  justify-content: center;
+  align-items: center;
+
+  & > button {
+    display: inherit;
+    justify-content: space-between;
     align-items: center;
+    width: 1.7rem;
+    border: none;
+    background-color: transparent;
+    @include respond(bp-768) {
+      width: 3rem;
+      margin-top: 1rem;
+    }
 
-    & > button{
-      display: inherit;
-      justify-content: space-between;
-      align-items: center;
-      width: 1.7rem;
-      border: none;
-      background-color: transparent;
-
-      & > svg {
-        width: 100%;
-      }
+    & > svg {
+      width: 100%;
     }
   }
+}

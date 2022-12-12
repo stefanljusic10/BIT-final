@@ -1,5 +1,11 @@
+@import '../../scss/mixins';
+
 .candidateCardsContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+
+  @include respond(bp-1200){
+    grid-template-columns: 1fr;
+  }
 }

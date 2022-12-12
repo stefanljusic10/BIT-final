@@ -1,7 +1,16 @@
+@import '../../scss/mixins';
+
 #search {
     display: inline;
     border: 1px solid grey;
     border-radius: 5rem;
     padding: .5rem 2rem;
     background-color: rgb(221, 220, 220);
+
+    @include respond(bp-768){
+        width: 60%;
+    }
+    @include respond(bp-640){
+        width: 100%;
+    }
 }
