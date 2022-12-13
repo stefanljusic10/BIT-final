@@ -1,19 +1,40 @@
+@import "../../../scss/mixins";
+
 .report-modal {
   background-color: white;
   border: 10px solid blue;
   border-radius: 20px;
   position: absolute;
   top: 0;
+  right: 0;
   left: 0;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 1;
   width: 50%;
-  margin-left: 25%;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
 
+  @include respond(bp-1200) {
+    width: 60%;
+  }
+
+  @include respond(bp-1024) {
+    width: 70%;
+  }
+
+  @include respond(bp-768) {
+    width: 80%;
+  }
+
+  @include respond(bp-640) {
+    width: 90%;
+  }
+
   & > h2 {
-    font-weight: 300;
+    font-weight: 600;
+    font-size: 1.7em;
     text-align: start;
     padding: 0;
     padding-bottom: 10px;
@@ -55,5 +76,8 @@
     background-color: black;
     color: white;
     border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
