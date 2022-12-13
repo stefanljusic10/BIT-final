@@ -76,13 +76,6 @@ const LogInModal = () => {
           }
         ></input>
         <Button name="Log in" btnClass="loginButton" method={(e) => validateLogUserData(e, logData.email, logData.password)} />
-        {/* <button
-          onClick={(e) =>
-            validateLogUserData(e, logData.email, logData.password)
-          }
-        >
-          Log In
-        </button> */}
       </form>
     </div>,
     document.getElementById("modal")

@@ -16,8 +16,6 @@ const AdminWizzardPage = () => {
   const [selectedCompany, setSelectedCompany] = useState('')
   const search = data.candidates.filter((e) =>e.name.toLowerCase().includes(searchValue.toLowerCase()));
 
-  // console.log(selectedCandidate);
-
   const nextStep = () => {
     // console.log('dasd');
     if(step === 1 && selectedCandidate)
@@ -46,8 +44,8 @@ const AdminWizzardPage = () => {
               search={search}
             />
           )}
-          {step === 2 && <SelectCompany setSelectedCompany={setSelectedCompany} search={search} />}
-          {step === 3 && <FillReportDetail candidateSelected={selectedCandidate} />}
+          {step === 2 && <SelectCompany setSelectedCompany={setSelectedCompany} search={search} candidateId={selectedCandidate.id} />}
+          {step === 3 && <FillReportDetail selectedCandidate={selectedCandidate} selectedCompany={selectedCompany} />}
           <div className="buttonContainer">
             {step > 1 && <Button name="BACK" btnClass="backButton" method={() => setStep(step - 1)} />}
             {step < 3 && <Button name="NEXT" btnClass="nextButton" method={nextStep} />}
