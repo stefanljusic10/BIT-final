@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Item from "../CandidateReport/Item/Item";
+import "./candidateInfo.scss";
 
 const CandidateInfo = (props) => {
   const email = props.chosenCandidate?.email.toLowerCase();

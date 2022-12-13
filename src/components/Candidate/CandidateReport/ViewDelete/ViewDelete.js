@@ -6,13 +6,12 @@ import "./ViewDelete.scss";
 const ViewDelete = ({ report, clickModal, setReportId }) => {
   const { data } = useContext(DataContext);
   const deleteAndRefreshReports = () => {
-    deleteReport(report.id)
-    .then(res => {
-      if(res.status >= 200 && res.status < 400)
-        data.setRefreshReports(!data.refreshReports)
-    })
+    deleteReport(report.id).then((res) => {
+      if (res.status >= 200 && res.status < 400)
+        data.setRefreshReports(!data.refreshReports);
+    });
   };
-  
+
   return (
     <div className="view-delete">
       <button>
@@ -20,6 +19,7 @@ const ViewDelete = ({ report, clickModal, setReportId }) => {
           onClick={() => {
             clickModal(true);
             setReportId(report.id);
+            window.scrollTo(0, 0);
           }}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

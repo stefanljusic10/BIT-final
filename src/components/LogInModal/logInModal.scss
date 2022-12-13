@@ -1,7 +1,8 @@
-@import '../../scss/mixins';
-@import '../../scss/variables';
+@import "../../scss/mixins";
+@import "../../scss/variables";
 
 #loginModal {
+  z-index: 10;
   position: absolute;
   top: 0;
   right: 0;
@@ -11,10 +12,10 @@
   @include center-x-y;
   flex-direction: column;
 
-  @include respond(bp-768){
+  @include respond(bp-768) {
     padding: 2rem;
   }
-  
+
   & > a {
     position: absolute;
     top: 2rem;
@@ -29,32 +30,32 @@
   & > form {
     width: 40%;
 
-    @include respond(bp-1024){
+    @include respond(bp-1024) {
       width: 60%;
     }
-    @include respond(bp-768){
+    @include respond(bp-768) {
       width: 100%;
     }
 
-    & > .error-label{
+    & > .error-label {
       color: red;
       margin-bottom: 0.5rem;
     }
 
-    & > .close-error-label{
+    & > .close-error-label {
       visibility: hidden;
     }
 
     & > .email,
-    .password{
+    .password {
       height: 2rem;
       border-radius: 2rem;
       border: none;
 
-      @include respond(bp-1024){
+      @include respond(bp-1024) {
         height: 2.2rem;
       }
-      @include respond(bp-768){
+      @include respond(bp-768) {
         height: 2.4rem;
       }
     }
@@ -70,7 +71,8 @@
       }
     }
 
-    & > .email-error, .password-error{
+    & > .email-error,
+    .password-error {
       border: 2px solid red;
     }
   }

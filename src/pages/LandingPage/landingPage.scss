@@ -1,4 +1,4 @@
-@import '../../scss/mixins';
+@import "../../scss/mixins";
 
 #searchWrap {
   display: flex;
@@ -7,19 +7,19 @@
   border-bottom: 1px solid gray;
   padding-bottom: 2rem;
 
-  & > h2{
-    font-size: 1.2rem;
+  & > h2 {
+    font-size: 1.5rem;
 
-    @include respond(bp-768){
+    @include respond(bp-768) {
       font-size: 1.8rem;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
-    @include respond(bp-640){
+    @include respond(bp-640) {
       display: none;
     }
   }
 
-  @include respond(bp-768){
+  @include respond(bp-768) {
     flex-direction: column;
   }
 }
@@ -30,14 +30,13 @@
   gap: 1rem;
   margin-top: 2rem;
 
-  @include respond(bp-1200){
+  @include respond(bp-1200) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @include respond(bp-1024){
+  @include respond(bp-1024) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include respond(bp-768){
+  @include respond(bp-768) {
     grid-template-columns: 1fr;
   }
 }
-
