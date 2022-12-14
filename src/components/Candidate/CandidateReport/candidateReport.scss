@@ -76,6 +76,14 @@
       }
     }
   }
+
+  .view-delete {
+    button {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 // Style for user page
@@ -98,6 +106,12 @@
 
     .view-delete {
       justify-content: flex-start;
+
+      button {
+        &:hover {
+          cursor: pointer;
+        }
+      }
 
       button:not(:first-child) {
         display: none;
