@@ -8,7 +8,7 @@ const Header = () => {
     useContext(DataContext);
 
   const logOut = () => {
-    sessionStorage.clear();
+    sessionStorage.removeItem("accessToken");
     setIsLogged(false);
   };
 
