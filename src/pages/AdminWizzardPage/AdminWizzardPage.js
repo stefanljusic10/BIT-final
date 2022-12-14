@@ -33,6 +33,7 @@ const AdminWizzardPage = () => {
               setCompanySelected(false) 
               setStep(step - 1)}} />}
             {step < 3 && <Button isDisabled={!candidateSelected && step===1 || !companySelected && step===2} name="NEXT" btnClass='nextButton' method={() => setStep(step + 1)} />}
+            {step === 3 && <Button name="SUBMIT" btnClass="submitButton" />}
           </div>
         </div>
       </div>
