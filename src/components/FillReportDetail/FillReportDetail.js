@@ -1,29 +1,35 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import DataContext from '../../utils/context'
+import nextPhasesInterview from '../../utils/nextPhasesInterview'
 import './fillReportDetail.scss'
 
-const FillReportDetail = ({ candidateSelected }) => {
+const FillReportDetail = ({ candidateSelected, companySelected }) => {
+  const { data } = useContext(DataContext)
+  const nextPhases = nextPhasesInterview(candidateSelected.id, companySelected, data.reports)
+
   return (
     <form className='fillReportDetail'>
-       
-          <label className="interviewDate">
-            Interview Date
-        <input type="date" />
-          </label>
-        
-        <div className='phase'>
-        <div>Phase</div>
-        <select>
-          <option>Technical</option>
-          <option>HR</option>
-           </select>
-        </div>
-        <div className='status'>
-        <div>Status</div>
-        <select>
-          <option>Technical</option>
-          <option>HR</option>
-           </select>
-        </div>
+        <label>
+          <p>Interview date:</p>
+          <input type='date' />
+        </label>
+        <label>
+          <p>Phase:</p>
+          <select>
+            {nextPhases.map(phase => <option key={phase}>{phase}</option>)}
+          </select>
+        </label>
+        <label>
+          <p>Status:</p>
+          <select>
+            <option>passed</option>
+            <option>declined</option>
+          </select>
+        </label>
+        <label>
+          <p>Notes:</p>
+          <textarea placeholder='type your note...'></textarea>
+        </label>
     </form>
   )
 }

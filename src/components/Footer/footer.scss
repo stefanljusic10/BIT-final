@@ -1,9 +1,16 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
 #footer {
-  position: fixed;
+  position: sticky;
+  z-index: 5;
   bottom: 0;
   width: 100%;
-  background-color: blue;
+  background-color: $color-blue;
   color: white;
   padding: 1rem 2rem;
-  z-index: 2;
+
+  @include respond(bp-640) {
+    text-align: center;
+  }
 }

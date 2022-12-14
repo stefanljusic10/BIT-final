@@ -1,7 +1,7 @@
 import React from "react";
 import './selectCandidateCard.scss';
 
-const CandidateCard = ({ candidate, setCandidateSelected, candidateSelected, isSelected }) => {
+const SelectCandidateCard = ({ candidate, isSelected, setCandidateSelected }) => {
   return (
     <div
       className={`selectCandidateCard ${isSelected ? "selectedCandidateCardActive" : ""}`}
@@ -16,4 +16,4 @@ const CandidateCard = ({ candidate, setCandidateSelected, candidateSelected, isS
   );
 };
 
-export default CandidateCard;
+export default SelectCandidateCard;

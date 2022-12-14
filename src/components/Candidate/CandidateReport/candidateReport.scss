@@ -1,40 +1,145 @@
+@import "../../../scss/mixins";
 // Style for admin page
 .candidateReport {
   padding: 0 10rem;
 
-  &:not(:first-child){
+  @include respond(bp-1200) {
+    padding: 0 6rem;
+  }
+  @include respond(bp-1024) {
+    padding: 0;
+  }
+  @include respond(bp-768) {
+    padding: 0 6rem;
+  }
+  @include respond(bp-640) {
+    padding: 0;
+  }
+
+  &:not(:first-child) {
     margin-top: 1.5rem;
   }
 
   .box {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
     padding: 1rem 0;
-    -webkit-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 18px -7px rgba(0,0,0,0.75);
+    @include cardBoxShadow;
 
-    & > .company, .candidate, .date, .status {
+    @include respond(bp-768) {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    & > .company,
+    .candidate,
+    .date,
+    .status {
       border-right: 1px solid gray;
       padding: 0 1rem;
+      @include respond(bp-768) {
+        @include center-x;
+        border-right: none;
+        border-bottom: 1px solid gray;
+        padding: 0.4rem 0;
+      }
+
+      & > h5 {
+        @include respond(bp-768) {
+          order: 2;
+        }
+      }
 
       & > span {
         color: gray;
         font-size: small;
+        @include respond(bp-768) {
+          order: 1;
+        }
       }
     }
 
-    & > .company, .candidate, .date {
+    & > .company,
+    .candidate,
+    .date {
       flex-basis: 25%;
     }
 
     & > .status {
       flex-basis: 15%;
 
-      &.passed{ color: green; }
-      &.declined{ color: red; }
+      &.passed {
+        color: green;
+      }
+      &.declined {
+        color: red;
+      }
+    }
+  }
+
+  .view-delete {
+    button {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Style for user page
+
+.candidateReport-user {
+  display: flex;
+  justify-content: flex-start;
+  .box-user {
+    position: relative;
+    // margin: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 20px;
+
+    @include respond(bp-640) {
+      font-size: 1.5em;
+    }
+
+    .view-delete {
+      justify-content: flex-start;
+
+      button {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      button:not(:first-child) {
+        display: none;
+      }
+    }
+
+    & > .company,
+    .candidate,
+    .date,
+    .status {
+      margin-bottom: 5px;
+    }
+
+    & > .status {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+
+      span {
+        display: none;
+      }
+
+      &.passed {
+        color: green;
+      }
+      &.declined {
+        color: red;
+      }
     }
   }
 }

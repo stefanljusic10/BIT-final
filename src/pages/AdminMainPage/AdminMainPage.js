@@ -1,16 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
+import CandidateModal from "../../components/Candidate/CandidateModal/CandidateModal";
 import DataContext from "../../utils/context";
 import "./adminMainPage.scss";
 
 const AdminMainPage = () => {
-  const { data } = useContext(DataContext)
+  const { data, reportId, setReportId, setCurrentPage } =
+    useContext(DataContext);
+  const listOfReports = data?.reports;
+  const [isReportClicked, setIsReportClicked] = useState(false);
+
+  useEffect(() => {
+    setCurrentPage("Reports");
+  }, []);
 
   return (
     <>
-      {data.reports.map((e) => (
-        <CandidateReport key={e.id} report={e} />
-      ))}
+      <div className="admin-wrapper">
+        {listOfReports.map((e) => (
+          <CandidateReport
+            key={e.id}
+            report={e}
+            clickModal={setIsReportClicked}
+            setReportId={setReportId}
+          />
+        ))}
+        {isReportClicked && (
+          <CandidateModal
+            clickModal={setIsReportClicked}
+            report={listOfReports}
+            reportId={reportId}
+          />
+        )}
+        {isReportClicked && <div className="modal-background"></div>}
+      </div>
     </>
   );
 };

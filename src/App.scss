@@ -1,14 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
+@import './scss/base';
+@import './scss/variables';
+@import './scss/mixins';
 
-body{
-    min-height: 100vh;
-}
+// #root{
+//   min-height: 100%;
+// }
 
 .main-box{
     padding: 2rem;
+    min-height: 100vh;
+
+    @include respond(bp-640){
+        padding: 1rem;
+      }
 }

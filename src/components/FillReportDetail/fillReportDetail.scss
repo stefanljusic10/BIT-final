@@ -1,21 +1,31 @@
-.fillReportDetail{
-    display: flex;
-    flex-wrap: wrap;
+@import "../../scss/variables";
+
+.fillReportDetail {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  justify-content: space-between;
+  color: $color-gray;
+  & > label:not(:last-child) {
+    width: 30%;
+  }
+  & > label:last-child {
+    display: block;
     width: 100%;
-}
+  }
 
-.interviewDate{
-   margin: 1rem 2rem;
-   width: 33%;
-    & > input {
-        width: 100%;
-    }
-}
-
-.phase{
-    margin: 1rem 2rem;
-}
-
-.status{
-    margin: 1rem 2rem;
+  & > label > input,
+  textarea,
+  select {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid $color-gray;
+    width: 100%;
+  }
+  & > label > p {
+    padding-left: 1rem;
+  }
+  & > label > textarea {
+    height: 10rem;
+  }
 }

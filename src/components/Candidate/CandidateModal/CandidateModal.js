@@ -9,9 +9,9 @@ const CandidateModal = (props) => {
   return (
     <>
       <div className="report-modal">
-        <span onClick={() => props.clickModal(false)} className="close">
+        <button onClick={() => props.clickModal(false)} className="close">
           X
-        </span>
+        </button>
         <h2 className="candidate-name">{chosenReport.candidateName}</h2>
 
         <div className="report-info">

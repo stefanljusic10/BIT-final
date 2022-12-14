@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Search from "../../components/Search/Search";
 import DataContext from "../../utils/context";
 import SelectCandidate from "../../components/SelectCandidate/SelectCandidate";
@@ -10,7 +10,7 @@ import FillReportDetail from "../../components/FillReportDetail/FillReportDetail
 import "./adminWizzardPage.scss";
 
 const AdminWizzardPage = () => {
-  const { data, searchValue } = useContext(DataContext);
+  const { data, searchValue, setCurrentPage } = useContext(DataContext);
   const [step, setStep] = useState(1);
   const [candidateSelected, setCandidateSelected] = useState(false);
   const [companySelected, setCompanySelected] = useState(false);
