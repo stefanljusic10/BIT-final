@@ -2,13 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import CandidateReport from "../../components/Candidate/CandidateReport/CandidateReport";
 import CandidateModal from "../../components/Candidate/CandidateModal/CandidateModal";
 import DataContext from "../../utils/context";
+import Search  from "../../components/Search/Search";
 import "./adminMainPage.scss";
 
 const AdminMainPage = () => {
-  const { data, reportId, setReportId, setCurrentPage } =
+  const { data, reportId, setReportId, setCurrentPage, searchValue } =
     useContext(DataContext);
   const listOfReports = data?.reports;
   const [isReportClicked, setIsReportClicked] = useState(false);
+  const searchReport = listOfReports.filter((e) => e.candidateName.toLowerCase().includes(searchValue.toLowerCase()) ||
+  e.companyName.toLowerCase().includes(searchValue.toLowerCase()));
+  
 
   useEffect(() => {
     setCurrentPage("Reports");
@@ -17,7 +21,8 @@ const AdminMainPage = () => {
   return (
     <>
       <div className="admin-wrapper">
-        {listOfReports.map((e) => (
+        <Search />
+        {searchReport.map((e) => (
           <CandidateReport
             key={e.id}
             report={e}
