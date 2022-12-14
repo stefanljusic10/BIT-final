@@ -1,7 +1,10 @@
-const nextPhasesInterview = (candidateId, companyName, reports) => {
-    const PHASES = ['cv', 'hr', 'tech', 'final']
-    const nextPhase = reports.filter(report => candidateId === report.candidateId && companyName === report.companyName).length
-    return PHASES.slice(nextPhase, PHASES.length)
-}
+const nextPhasesInterview = (candidateId, companyId, reports) => {
+  const PHASES = ["cv", "hr", "tech", "final"];
+  const nextPhase = reports.filter(
+    (report) =>
+      candidateId === report.candidateId && companyId === report.companyId
+  ).length;
+  return PHASES.slice(nextPhase, PHASES.length);
+};
 
-export default nextPhasesInterview
+export default nextPhasesInterview;

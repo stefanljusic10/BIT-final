@@ -28,7 +28,8 @@
 }
 
 .nextButton:hover,
-.backButton:hover {
+.backButton:hover,
+.submitButton:hover {
   transform: scale(1.05);
   transition: 100ms;
   box-shadow: none;

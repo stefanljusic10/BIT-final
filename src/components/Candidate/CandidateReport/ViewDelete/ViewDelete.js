@@ -5,12 +5,6 @@ import "./ViewDelete.scss";
 
 const ViewDelete = ({ report, clickModal, setReportId }) => {
   const { data } = useContext(DataContext);
-  const deleteAndRefreshReports = () => {
-    deleteReport(report.id).then((res) => {
-      if (res.status >= 200 && res.status < 400)
-        data.setRefreshReports(!data.refreshReports);
-    });
-  };
 
   return (
     <div className="view-delete">
@@ -41,7 +35,7 @@ const ViewDelete = ({ report, clickModal, setReportId }) => {
         </svg>
       </button>
 
-      <button onClick={deleteAndRefreshReports}>
+      <button onClick={() => deleteReport(data, report.id)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

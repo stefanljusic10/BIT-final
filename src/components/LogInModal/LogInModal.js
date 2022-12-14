@@ -3,39 +3,14 @@ import ReactDOM from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../../utils/context";
 import Button from "../Button/Button";
+import validateLogin from "../../utils/validateLogin";
 import "./logInModal.scss";
 
 const LogInModal = () => {
   const [logData, setLogData] = useState({ email: "", password: "" });
   const [isValidLogData, setIsValidLogData] = useState(true);
-  const { setIsLogged } = useContext(DataContext)
+  const { setIsLogged } = useContext(DataContext);
   const navigate = useNavigate();
-
-  const validateLogUserData = (e, emailInput, passwordInput) => {
-    e.preventDefault();
-    fetch("http://localhost:3333/login", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: emailInput, password: passwordInput }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.accessToken) {
-          setIsValidLogData(true)
-          setIsLogged(true)
-          sessionStorage.setItem("accessToken", res.accessToken);
-          navigate("/admin");
-        }
-        else throw new Error({ message: 'Greska' })
-      })
-      .catch((error) => {
-        console.log(error.message);
-        setIsValidLogData(false)
-      });
-  };
 
   return ReactDOM.createPortal(
     <div id="loginModal">
@@ -56,7 +31,9 @@ const LogInModal = () => {
         </svg>
       </Link>
       <form>
-        <label className={isValidLogData ? "error-label close-error-label" : "error-label"}>*Required</label>
+        <label className={isValidLogData ? "error-label close-error-label" : "error-label"}>
+          *Required
+        </label>
         <input
           type="text"
           name="email"
@@ -75,7 +52,20 @@ const LogInModal = () => {
             setLogData({ ...logData, [e.target.name]: e.target.value })
           }
         ></input>
-        <Button name="Log in" btnClass="loginButton" method={(e) => validateLogUserData(e, logData.email, logData.password)} />
+        <Button
+          name="Log in"
+          btnClass="loginButton"
+          method={(e) =>
+            validateLogin(
+              e,
+              logData.email,
+              logData.password,
+              setIsValidLogData,
+              setIsLogged,
+              navigate
+            )
+          }
+        />
       </form>
     </div>,
     document.getElementById("modal")

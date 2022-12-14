@@ -13,9 +13,9 @@ const SelectCompany = ({ setSelectedCompany, candidateId }) => {
         <div
           onClick={() => setSelectedCompany(company)}
           className="selectCompany"
-          key={company + candidateId}
+          key={company.companyId}
         >
-          {company}
+          {company.companyName}
         </div>
       ))}
     </div>
