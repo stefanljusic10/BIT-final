@@ -1,9 +1,9 @@
 import React from 'react'
 import './errorPage.scss'
 
-const ErrorPage = () => {
+const ErrorPage = ({ text }) => {
   return (
-    <div className='errorPage'>Page Not Found</div>
+    <div className='errorPage'>{text}</div>
   )
 }
 

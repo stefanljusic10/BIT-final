@@ -5,7 +5,7 @@ const ProcessSelected = ({ selectedCandidate, selectedCompany }) => {
   return (
     <div className="processSelected">
       <p>{selectedCandidate.name}</p>
-      <p>{selectedCompany.companyName}</p>
+      <p>{selectedCompany.name}</p>
     </div>
   )
 }

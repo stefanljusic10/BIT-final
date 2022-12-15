@@ -55,7 +55,7 @@ const App = () => {
                 path="/createReports"
                 element={isLogged ? <AdminWizzardPage /> : <LogInModal />}
               ></Route>
-              <Route path="*" element={<ErrorPage />}></Route>
+              <Route path="*" element={<ErrorPage text="Page not found!"/>}></Route>
             </Routes>
           </main>
           <Footer />

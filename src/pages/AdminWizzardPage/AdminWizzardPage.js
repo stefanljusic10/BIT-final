@@ -9,6 +9,8 @@ import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 import Button from "../../components/Button/Button";
 import FillReportDetail from "../../components/FillReportDetail/FillReportDetail";
 import postReport from "../../utils/postReport";
+import nextPhaseInterview from "../../utils/nextPhaseInterview";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import "./adminWizzardPage.scss";
 
 const AdminWizzardPage = () => {
@@ -19,15 +21,21 @@ const AdminWizzardPage = () => {
   const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
   const navigate = useNavigate();
   const [report, setReport] = useState({
-    candidateId: selectedCandidate.id,
-    candidateName: selectedCandidate.name,
-    companyName: selectedCompany.companyName,
-    companyId: selectedCompany.companyId,
+    candidateId: "",
+    candidateName: "",
+    companyName: "",
+    companyId: "",
     interviewDate: "",
     phase: "",
     status: "",
     note: "",
   });
+  const nextPhase = nextPhaseInterview(
+    selectedCandidate.id,
+    selectedCompany.id,
+    data.reports
+  );
+  console.log(nextPhase);
 
   const nextStep = () => {
     if (step === 1 && selectedCandidate) setStep(step + 1);
@@ -35,7 +43,7 @@ const AdminWizzardPage = () => {
   };
 
   const validateForm = () => {
-    if(report.interviewDate && report.phase && report.status && report.note.length >= 15)
+    if(report.interviewDate && report.status && report.note.length >= 15)
       postReport(data, report, () => navigate("/admin"))
   }
 
@@ -68,10 +76,9 @@ const AdminWizzardPage = () => {
             <SelectCompany
               setSelectedCompany={setSelectedCompany}
               search={search}
-              candidateId={selectedCandidate.id}
             />
           )}
-          {step === 3 && (
+          {step === 3 && nextPhase !== 'end-passed' && nextPhase !== 'end-declined' && (
             <FillReportDetail
               selectedCandidate={selectedCandidate}
               selectedCompany={selectedCompany}
@@ -79,6 +86,8 @@ const AdminWizzardPage = () => {
               setReport={setReport}
             />
           )}
+          {step === 3 && nextPhase === 'end-passed' && <ErrorPage text={'Candidate has passed all phases!'} />}
+          {step === 3 && nextPhase === 'end-declined' && <ErrorPage text={'Candidate has been declined!'} />}
           <div className="buttonContainer">
             {step > 1 && (
               <Button
@@ -90,7 +99,7 @@ const AdminWizzardPage = () => {
             {step < 3 && (
               <Button name="NEXT" btnClass="nextButton" method={nextStep} />
             )}
-            {step === 3 && (
+            {step === 3 && nextPhase !== 'end-passed' && nextPhase !== 'end-declined' && (
               <Button
                 name="SUBMIT"
                 btnClass="submitButton"
