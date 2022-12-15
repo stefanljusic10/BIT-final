@@ -22,7 +22,7 @@ This is primarily a front-end project. It is deployed via Netlify: [LINK]. Yet i
 
 Report Manager is a team project conducted during the final two weeks of the Belgrade Institute of Technology's Bootcamp in December 2022. The members of the team are:
 
-Milos Broceta. GitHub: https://github.com/brocetta
+Milos Broceta. GitHub: https://github.com/brocetta <br />
 Stefan Ljusic. GitHub: https://github.com/stefanljusic10
 Branko Markovic.
 Petar Srdanovic. Github: https://github.com/petarsrd
