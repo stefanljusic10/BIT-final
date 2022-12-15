@@ -39,16 +39,7 @@ const CandidateModal = (props) => {
         <div className="notes">
           <h5>Notes</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            sapiente odit expedita ipsam doloribus consequuntur provident, sint
-            deserunt beatae labore vero quo ullam asperiores dolor fugit odio ut
-            non veritatis. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Eaque sapiente odit expedita ipsam doloribus consequuntur
-            provident, sint deserunt beatae labore vero quo ullam asperiores
-            dolor fugit odio ut non veritatis. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Eaque sapiente odit expedita ipsam
-            doloribus consequuntur provident, sint deserunt beatae labore vero
-            quo ullam asperiores dolor fugit odio ut non veritatis.{" "}
+          {chosenReport.note}
           </p>
         </div>
       </div>

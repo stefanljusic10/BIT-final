@@ -8,6 +8,7 @@ import ProcessSelected from "../../components/ProcessSelected/ProcessSelected";
 import Button from "../../components/Button/Button";
 import FillReportDetail from "../../components/FillReportDetail/FillReportDetail";
 import "./adminWizzardPage.scss";
+import {useNavigate} from "react-router-dom"
 
 const AdminWizzardPage = () => {
   const { data, searchValue, setCurrentPage } = useContext(DataContext);
@@ -20,19 +21,26 @@ const AdminWizzardPage = () => {
   const [note, setNote] = useState("");
   const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
   const searchCompanies = data.companies.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
-  console.log(interviewDate, phase, status, note);
-
+  
+const navigate = useNavigate()
   const submitFillReport = () => {
-    console.log("next");
     fetch("http://localhost:3333/api/reports", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authentication" : `Bearer ${sessionStorage.getItem("accessToken")}`,
+        "Authorization": `Bearer ${sessionStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify({candidateId: candidateSelected.id ,candidateName: candidateSelected.name, companyId: companySelected.id ,companyName: companySelected.name, interviewDate: interviewDate, phase: phase, status: status, note: note})
   })
+  .then(res => {
+    if(!res.ok){
+      throw new Error("Error")
+    }
+    return res.json()
+  })
+  .then(res => navigate("/admin"))
+  .catch(err => console.log(err.message))
   }
 
 
