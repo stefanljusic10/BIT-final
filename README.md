@@ -1,23 +1,22 @@
-# Reports Administration
+# Report Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+Report Manager is a React SPA designed for HR agencies which want to track the job application status of the candidates from their database.
 
-In the project directory, you can run:
+The application consists of two parts: one which is visible to all users (Interviews Reports) and the other which is visible only to authorized ones (Reports Administration).
 
-### `npm start`
+### Interviews Reports
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This part of the application is read-only. Users have access to the list of rendered cards depicting candidates and are allowed to see more info on the candidate and his/her job applications in form of a list of reports. Each report includes information on the company the candidate applied to, the phase of the job recruiting process, whether the candidate has passed the stage, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Reports Administration
 
-### `npm test`
+Upon successful authorization, the user is allowed not only to read, but also to delete from and create new reports in the database. For the purpose of creating new reports, an administration wizzard was implemented. A new report will be sent to the database only if certain conditions are fulfilled (e.g. the candidate has passed the previous stage of the process).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Run the Project
+
+This is primarily a front-end project. It is deployed via Netlify: [LINK]
 
 ### `npm run build`
 
