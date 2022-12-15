@@ -4,12 +4,12 @@ import getCompaniesForCandidate from '../../utils/getCompaniesForCandidate'
 import "./selectCompany.scss";
 
 const SelectCompany = ({ setSelectedCompany, candidateId }) => {
-  const { data } = useContext(DataContext);
+  const { data, searchValue} = useContext(DataContext);
   const candidateCompanies = getCompaniesForCandidate(candidateId, data.reports)
-  
+  const searchCompany = candidateCompanies.filter((e) => e.companyName.toLowerCase().includes(searchValue.toLowerCase()))
   return (
     <div>
-      {candidateCompanies.map((company) => (
+      {searchCompany.map((company) => (
         <div
           onClick={() => setSelectedCompany(company)}
           className="selectCompany"
