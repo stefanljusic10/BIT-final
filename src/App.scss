@@ -4,7 +4,7 @@
 
 .main-box{
     padding: 2rem;
-    min-height: 100vh;
+    min-height: 85vh;
 
     @include respond(bp-640){
         padding: 1rem;

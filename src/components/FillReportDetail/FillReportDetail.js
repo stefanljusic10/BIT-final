@@ -12,24 +12,24 @@ const FillReportDetail = ({ candidateSelected, companySelected, setInterviewDate
     <form className='fillReportDetail'>
         <label>
           <p>Interview date:</p>
-          <input onChange={e => } type='date' />
+          <input onChange={e => {setInterviewDate(e.target.value)}} type='date' />
         </label>
         <label>
           <p>Phase:</p>
-          <select>
+          <select onChange={e => setPhase(e.target.value)}>
             {nextPhases.map(phase => <option key={phase}>{phase}</option>)}
           </select>
         </label>
         <label>
           <p>Status:</p>
-          <select>
+          <select onChange={e => setStatus(e.target.value)}t>
             <option>passed</option>
             <option>declined</option>
           </select>
         </label>
         <label>
           <p>Notes:</p>
-          <textarea placeholder='type your note...'></textarea>
+          <textarea onChange={e => setNote(e.target.value)} placeholder='type your note...'></textarea>
         </label>
     </form>
   )

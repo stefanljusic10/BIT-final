@@ -20,19 +20,21 @@ const AdminWizzardPage = () => {
   const [note, setNote] = useState("");
   const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
   const searchCompanies = data.companies.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
-  const report = {candidateName: candidateSelected, companyName: companySelected, interviewDate: , phase: , status: , note: ,}
+  console.log(interviewDate, phase, status, note);
 
   const submitFillReport = () => {
-    fetch("http://localhost:3333/login", {
+    console.log("next");
+    fetch("http://localhost:3333/api/reports", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Authentication" : `Bearer ${sessionStorage.getItem("accessToken")}`,
       },
-      body: JSON.stringify({report})
+      body: JSON.stringify({candidateId: candidateSelected.id ,candidateName: candidateSelected.name, companyId: companySelected.id ,companyName: companySelected.name, interviewDate: interviewDate, phase: phase, status: status, note: note})
+  })
   }
-}
+
 
   return (
       <div className="adminWizzard">
@@ -50,7 +52,7 @@ const AdminWizzardPage = () => {
               setCompanySelected(false) 
               setStep(step - 1)}} />}
             {step < 3 && <Button isDisabled={!candidateSelected && step===1 || !companySelected && step===2} name="NEXT" btnClass='nextButton' method={() => setStep(step + 1)} />}
-            {step === 3 && <Button name="SUBMIT" btnClass="submitButton" />}
+            {step === 3 && <Button method={submitFillReport} name="SUBMIT" btnClass="submitButton" />}
           </div>
         </div>
       </div>
