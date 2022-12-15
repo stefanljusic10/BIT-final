@@ -14,10 +14,27 @@ const AdminWizzardPage = () => {
   const [step, setStep] = useState(1);
   const [candidateSelected, setCandidateSelected] = useState(false);
   const [companySelected, setCompanySelected] = useState(false);
+  const [interviewDate, setInterviewDate] = useState();
+  const [phase, setPhase] = useState("");
+  const [status, setStatus] = useState("");
+  const [note, setNote] = useState("");
   const search = data.candidates.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
   const searchCompanies = data.companies.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
+  const report = {candidateName: candidateSelected, companyName: companySelected, interviewDate: , phase: , status: , note: ,}
+
+  const submitFillReport = () => {
+    fetch("http://localhost:3333/login", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authentication" : `Bearer ${sessionStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify({report})
+  }
+}
+
   return (
-    <>
       <div className="adminWizzard">
         <div className="selectContainer">
           <Process step={step} />
@@ -27,7 +44,7 @@ const AdminWizzardPage = () => {
           {step < 3 && <Search />}
           {step === 1 && <SelectCandidate candidateSelected={candidateSelected} setCandidateSelected={setCandidateSelected} search={search} />}
           {step === 2 && <SelectCompany companySelected={companySelected} setCompanySelected={setCompanySelected} search={searchCompanies} />}
-          {step === 3 && <FillReportDetail candidateSelected={candidateSelected} companySelected={companySelected} />}
+          {step === 3 && <FillReportDetail candidateSelected={candidateSelected} companySelected={companySelected} setInterviewDate={setInterviewDate} setPhase={setPhase} setStatus={setStatus} setNote={setNote} />}
           <div className="buttonContainer">
             {step > 1 && <Button name="BACK" btnClass='backButton' method={() => {
               setCompanySelected(false) 
@@ -37,7 +54,6 @@ const AdminWizzardPage = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

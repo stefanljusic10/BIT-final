@@ -3,15 +3,16 @@ import DataContext from '../../utils/context'
 import nextPhasesInterview from '../../utils/nextPhasesInterview'
 import './fillReportDetail.scss'
 
-const FillReportDetail = ({ candidateSelected, companySelected }) => {
+const FillReportDetail = ({ candidateSelected, companySelected, setInterviewDate, setPhase, setStatus, setNote}) => {
   const { data } = useContext(DataContext)
   const nextPhases = nextPhasesInterview(candidateSelected.id, companySelected, data.reports)
+  
 
   return (
     <form className='fillReportDetail'>
         <label>
           <p>Interview date:</p>
-          <input type='date' />
+          <input onChange={e => } type='date' />
         </label>
         <label>
           <p>Phase:</p>
