@@ -2,9 +2,9 @@
 
 ## Project Description
 
-Report Manager is a React SPA designed for HR agencies which want to track the job application status of the candidates from their database.
+Report Manager is a React SPA designed for HR agencies that want to track the job application status of the candidates from their database.
 
-The application consists of two parts: one which is visible to all users (Interviews Reports) and the other which is visible only to authorized ones (Reports Administration).
+The application consists of two parts: one visible to all users (Interviews Reports) and the other visible only to authorized ones (Reports Administration).
 
 ### Interviews Reports
 
@@ -16,7 +16,7 @@ Upon successful authorization, the user is allowed not only to read, but also to
 
 ## How to Run the Project
 
-This is primarily a front-end project. It is deployed via Netlify: [LINK]. Yet it also requires back-end (a database) for all of the core functionalities to work properly. The server is deployed via: [LINK].
+This is primarily a front-end project. It is deployed via Netlify: [LINK]. Yet it also requires a back-end (a database) for all of the core functionalities to work properly. The server is deployed via: [LINK].
 
 ## Credits
 
