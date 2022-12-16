@@ -44,7 +44,7 @@ const App = () => {
                 path="/candidate/id=:id"
                 element={<CandidatePage />}
               ></Route>
-              <Route exact path="/login" element={<LogInModal />}></Route>
+              <Route exact path="/login" element={!isLogged ? <LogInModal /> : <AdminMainPage />}></Route>
               <Route
                 exact
                 path="/admin"
