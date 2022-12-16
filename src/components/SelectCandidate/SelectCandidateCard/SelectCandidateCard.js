@@ -7,7 +7,7 @@ const SelectCandidateCard = ({ candidate, isSelected, setSelectedCandidate }) =>
       className={`selectCandidateCard ${isSelected ? "selectedCandidateCardActive" : ""}`}
       onClick={() => setSelectedCandidate(candidate)}
     >
-      <img src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg" alt="slika" />
+      <img src="https://hccryde.syd.catholic.edu.au/wp-content/uploads/sites/148/2019/05/Person-icon.jpg" alt="slika" />
       <div className="nameEmail">
         <p>{candidate.name}</p>
         <p>{candidate.email}</p>
