@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import DataContext from "./utils/context";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,8 +9,8 @@ import LogInModal from "./components/LogInModal/LogInModal";
 import AdminMainPage from "./pages/AdminMainPage/AdminMainPage";
 import AdminWizzardPage from "./pages/AdminWizzardPage/AdminWizzardPage";
 import useData from "./utils/useData";
-import "./App.scss";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import "./App.scss";
 
 const App = () => {
   const data = useData();

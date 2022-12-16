@@ -4,7 +4,7 @@ import DataContext from "../../utils/context";
 import "./header.scss";
 
 const Header = () => {
-  const { isLogged, setIsLogged, currentPage, setCurrentPage } =
+  const { isLogged, setIsLogged, currentPage } =
     useContext(DataContext);
 
   const logOut = () => {

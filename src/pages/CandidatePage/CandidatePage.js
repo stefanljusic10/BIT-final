@@ -11,15 +11,14 @@ const CandidatePage = () => {
   const { data, reportId, setReportId, setCurrentPage } = useContext(DataContext);
   const { id } = useParams();
   const [isReportClicked, setIsReportClicked] = useState(false);
+  const chosenCandidate = data.candidates.find((e) => e.id == id);
+  const chosenCandidateReports = data?.reports.filter((e) => e.candidateId == id);
 
   useEffect(() => {
     setCurrentPage("");
   }, []);
 
-  const chosenCandidate = data.candidates.find((e) => e.id == id);
-  const chosenCandidateReports = data?.reports.filter((e) => e.candidateId == id);
-
-  if (!chosenCandidate) return <ErrorPage />;
+  if (!chosenCandidate) return <ErrorPage text="Candidate not found!" />;
 
   return (
     <>

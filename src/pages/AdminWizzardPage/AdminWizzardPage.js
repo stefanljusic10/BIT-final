@@ -35,7 +35,6 @@ const AdminWizzardPage = () => {
     selectedCompany.id,
     data.reports
   );
-  console.log(nextPhase);
 
   const nextStep = () => {
     if (step === 1 && selectedCandidate) setStep(step + 1);

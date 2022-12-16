@@ -1,6 +1,4 @@
 import React from "react";
-import { useContext } from "react";
-import DataContext from "../../../utils/context";
 import moment from "moment";
 import ViewDelete from "./ViewDelete/ViewDelete";
 import Item from "./Item/Item";
@@ -12,10 +10,8 @@ const CandidateReport = ({
   setReportId,
   isSquare = false,
 }) => {
-  const { isLogged } = useContext(DataContext);
   const interviewDate = moment(report.interviewDate).format("LL");
-  const statusClass =
-    report.status === "passed" ? "status passed" : "status declined";
+  const statusClass = report.status === "passed" ? "status passed" : "status declined";
 
   return (
     <div className={!isSquare ? "candidateReport" : "candidateReport-user"}>
