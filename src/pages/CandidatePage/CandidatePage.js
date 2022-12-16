@@ -19,7 +19,7 @@ const CandidatePage = () => {
   const chosenCandidate = data.candidates.find((e) => e.id == id);
   const chosenCandidateReports = data?.reports.filter((e) => e.candidateId == id);
 
-  if (!chosenCandidate) return <ErrorPage />;
+  if (!chosenCandidate) return <ErrorPage text='Cadidate not found!' />;
 
   return (
     <>
