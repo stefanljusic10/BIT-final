@@ -1,5 +1,5 @@
 const fetchData = (endpoint, callback) => {
-    fetch(`http://localhost:3333/api/${endpoint}`)
+    fetch(`https://637d241516c1b892ebc87a2f.mockapi.io/${endpoint}`)
         .then(res => res.json())
         .then(res => callback(res))
 }

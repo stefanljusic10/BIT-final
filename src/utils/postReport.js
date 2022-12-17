@@ -1,6 +1,6 @@
 const postReport = (data, report, callback) => {
   const token = sessionStorage.getItem("accessToken");
-  fetch("http://localhost:3333/api/reports", {
+  fetch("https://637d241516c1b892ebc87a2f.mockapi.io/reports", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

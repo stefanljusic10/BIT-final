@@ -1,17 +1,20 @@
 const nextPhaseInterview = (candidateId, companyId, reports) => {
   const PHASES = ["cv", "hr", "tech", "final"];
 
-  const candidateReportsForCopmany = reports.filter((report) => candidateId === report.candidateId && companyId === report.companyId)
+  const candidateReportsForCopmany = reports
+    .filter((report) => candidateId === report.candidateId && companyId === report.companyId)
   const allPhassesPassed = candidateReportsForCopmany.every(report => report.status === "passed")
-  const nextPhase = candidateReportsForCopmany.length;
+  const phasesList = candidateReportsForCopmany.map(report => report.phase)
+  let availablePhases = PHASES.map(phase => phasesList.includes(phase) ? "empty" : phase)
+  availablePhases = availablePhases.slice(availablePhases.lastIndexOf('empty') + 1)
 
-  if(nextPhase === 0)
-    return PHASES[0]
+  if(phasesList.length === 0)
+    return availablePhases[0]
     
-  if(nextPhase < PHASES.length && allPhassesPassed)
-    return PHASES[nextPhase]
+  if(phasesList.length < PHASES.length && allPhassesPassed)
+    return availablePhases[0]
 
-  if(nextPhase === PHASES.length - 1 && allPhassesPassed)
+  if(phasesList.length === PHASES.length - 1 && allPhassesPassed)
     return 'end-passed'
 
   if(!allPhassesPassed)
