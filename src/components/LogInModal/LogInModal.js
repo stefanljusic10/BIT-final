@@ -32,7 +32,7 @@ const LogInModal = () => {
       </Link>
       <form>
         <label className={isValidLogData ? "error-label close-error-label" : "error-label"}>
-          *Required
+          *Wrong email or password
         </label>
         <input
           type="text"
