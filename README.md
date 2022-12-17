@@ -1,5 +1,9 @@
 # Report Manager
 
+## How to Run the Project
+
+It is deployed via Heroku: https://job-seeker.herokuapp.com/
+
 ## Project Description
 
 Report Manager is a React SPA designed for HR agencies that want to track the job application status of the candidates from their database.
@@ -13,10 +17,6 @@ This part of the application is read-only. Users have access to the list of rend
 ### Reports Administration
 
 Upon successful authorization, the user is allowed not only to read, but also to delete from and create new reports in the database. For the purpose of creating new reports, an administration wizzard was implemented. A new report will be sent to the database only if certain conditions are fulfilled (e.g. the candidate has passed the previous stage of the process).
-
-## How to Run the Project
-
-This is primarily a front-end project. It is deployed via Netlify: [LINK]. Yet it also requires a back-end (a database) for all of the core functionalities to work properly. The server is deployed via: [LINK].
 
 ## Credits
 
