@@ -2,7 +2,14 @@
 
 ## How to Run the Project
 
-It is deployed via Heroku: https://job-seeker.herokuapp.com/
+It is deployed via Vercel: https://bit-final-report-manager.vercel.app/
+Login credentials:
+email: dev@dev.com
+password: developer
+
+Or if you're downloading project follow these steps:
+1. npm i - to install all necessary dependencies
+2. npm start - to run application
 
 ## Project Description
 
