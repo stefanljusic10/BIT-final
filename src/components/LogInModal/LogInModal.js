@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
-import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../../utils/context";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import validateLogin from "../../utils/validateLogin";
 import "./logInModal.scss";

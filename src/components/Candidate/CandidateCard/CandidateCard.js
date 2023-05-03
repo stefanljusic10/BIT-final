@@ -7,7 +7,7 @@ const CandidateCard = ({ candidate }) => {
 
   return (
     <div className="candidate-card" onClick={() => {navigate(`/candidate/id=${candidate.id}`)}}>
-      <img src="https://hccryde.syd.catholic.edu.au/wp-content/uploads/sites/148/2019/05/Person-icon.jpg" alt={candidate.name} />
+      <img src={candidate.avatar} alt={candidate.name} />
       <p>{candidate.name}</p>
       <p>{candidate.email}</p>
     </div>

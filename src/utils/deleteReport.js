@@ -1,10 +1,8 @@
 const deleteReport = (data, id) => {
-  const token = sessionStorage.getItem("accessToken");
-  fetch(`http://localhost:3333/api/reports/${id}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+  // const token = sessionStorage.getItem("accessToken");
+  console.log(id);
+  fetch(`https://637d241516c1b892ebc87a2f.mockapi.io/reports/${id}`, {
+    method: "DELETE"
   })
   .then((res) => {
     if (res.status >= 200 && res.status < 400)
