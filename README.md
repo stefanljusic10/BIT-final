@@ -3,6 +3,7 @@
 ## How to Run the Project
 
 It is deployed via Vercel: https://bit-final-report-manager.vercel.app/
+
 Login credentials:
 email: dev@dev.com
 password: developer
